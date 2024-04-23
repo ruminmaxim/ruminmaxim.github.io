@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <title>City.Online: Creating the design library</title>
+    <link rel="stylesheet" media="screen" href="style.css">
+    <link rel="stylesheet" media="screen" href="stylemobile.css">
+    <link rel="stylesheet" media="screen" href="icons.css">
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+    ym(90798039, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true,
+         webvisor:true
+    });
+ </script>
+ <noscript><div><img src="https://mc.yandex.ru/watch/90798039" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+ <!-- /Yandex.Metrika counter -->
+</head>
+
+<body class="bodyProject">
+    <a href="index.html#gorod-library" class="backLink">
+        <div class="closeButton">
+        </div>
+    </a>
+    <div class="aboutProject">
+        <div class="aboutProjectSection1024">
+            <h1>Creating the design library</h1>
+            <div class="sectionText">
+                <h4>Background:</h4>
+                <span>As&nbsp;part&nbsp;of<a href="gorod-main-eng.html"> redesign and transformation of&nbsp;the platform</a>, the design team had to&nbsp;decide what to&nbsp;do&nbsp;with the library. Basically, there were two options: create a&nbsp;new one or&nbsp;reuse the old one.</span>
+            </div>
+            <div class="sectionText">
+                <h4>The team</h4>
+                <span>
+                    As&nbsp;part of&nbsp;the city&rsquo;s online portal redesign project, the design team had to&nbsp;decide what to&nbsp;do&nbsp;with the library. Basically, there were two options: create a&nbsp;new one or&nbsp;reuse the old one.
+                </span>
+            </div>
+            <div class="sectionSeparator"></div>
+
+            <div class="sectionTextAndImageRight">
+                <div class="sectionTextAndImageText sectionText50">
+                    <b>Reuse an&nbsp;existing library or&nbsp;set up&nbsp;a&nbsp;new one?</b>
+                    <span>Originally there was an&nbsp;old library with two linked documents with 700+ screens inside. The idea was to&nbsp;simply change the styles and appearance of&nbsp;the components, but the library was not ready for this due to&nbsp;several nuances.</span>
+                </div>
+                <div class="sectionTextAndImageImg">
+                    <img src="projects/gorod/ds/files-eng.png">
+                </div>
+            </div>
+            <div class="sectionText">
+                <ol class="olBold">
+                    <li>                    
+                            <b>Fundamentally new design</b>
+                            <span>During the redesign of&nbsp;the platform, all layouts, elements and user experience have undergone major changes.</span>
+                            <span class="textGray">(Unlike, for example,<a href="anw-ds-rework.html"> my&nbsp;other project</a>, where we&nbsp;specifically redesigned to&nbsp;keep the HTML structure and design system.)</span>
+                        </li>
+                        <li>                    
+                            <b>Mockups Assembly</b>
+                            <span>Even though we&nbsp;wouldn&rsquo;t have had to&nbsp;build the layouts from scratch, they would still have had to&nbsp;be&nbsp;radically adjusted to&nbsp;look right, so&nbsp;it&nbsp;wouldn&rsquo;t have saved much time.</span>
+                        </li>
+                        <li>                    
+                            <b>Detached components</b>
+                            <span>Quite common practice in&nbsp;old files, so&nbsp;even if&nbsp;we&nbsp;updated the components, we&nbsp;would not be&nbsp;able to&nbsp;run the changes.</span>
+                        </li>
+                        <li>                    
+                            <b>Poorly assembled components</b>
+                            <span>A&nbsp;lot of&nbsp;components were poorly assembled, were not responsive, and had useless memory-cluttering layers.</span>
+                        </li>
+                        <li>                    
+                            <b>Unused components</b>
+                            <span>
+                                There were a&nbsp;lot of&nbsp;components made &laquo;just in&nbsp;case&raquo; (for example, variations for a&nbsp;dark theme, although there was no&nbsp;dark theme at&nbsp;the moment).
+                            </span>
+                        </li>
+                        <li>                    
+                            <b>Hard to navigate structure</b>
+                            <span>All components and styles were displayed on&nbsp;one page, so&nbsp;it&nbsp;was difficult to&nbsp;find what you needed. Moreover, the components were not grouped into variants (at&nbsp;that time this feature was new).</span>
+                        </li>
+                </ol>
+            </div>
+    </div>
+    <img src="projects/gorod/ds/old.png" class="projectImage">
+    <div class="aboutProjectSection1024">
+        <div class="sectionText">
+            <h4>Final decision</h4>
+            <span>In&nbsp;view of&nbsp;all these problems, we&nbsp;decided to&nbsp;create a&nbsp;new library because redesigning old components took as&nbsp;much time (or&nbsp;even more) than creating new ones (taking into account the problems that were in&nbsp;the outdated library). It&nbsp;was a&nbsp;chance to&nbsp;start over and avoid previous mistakes.</span>
+        </div>
+        <div class="sectionText">
+            <h4>Design Library Research</h4>
+            <span>As&nbsp;soon as&nbsp;the decision to&nbsp;create a&nbsp;new library was made, we&nbsp;started our research with benchmarking. I&nbsp;looked at&nbsp;over 20&nbsp;different design systems and libraries, the main aspects we&nbsp;wanted are:</span>
+            <ul>
+                <li>The structure of&nbsp;the file and pages, how the components are grouped.</li>
+                <li>How components are assembled.</li>
+                <li>How components are decomposed in&nbsp;terms of&nbsp;the atomic approach.</li>
+            </ul>
+            <img src="projects/gorod/ds/design-systems.png" class="projectImage">
+        </div>
+        <div class="sectionText sectionTextAdditional">
+            <span>We&nbsp;also interviewed some other designers in&nbsp;our company who have dealt with extensive project libraries. Not only did they share some useful knowledge in&nbsp;terms of&nbsp;structuring, but also in&nbsp;terms of&nbsp;useful tools and techniques.</span>
+        </div>
+        <div class="sectionTextAndImageRight">
+            <div class="sectionTextAndImageText sectionText70">
+                <b>Design Library Structure</b>
+                <span>We&nbsp;knew for sure that the option with all components on&nbsp;one page would not suit&nbsp;us, because it&nbsp;is&nbsp;difficult to&nbsp;navigate, so&nbsp;we&nbsp;decided to&nbsp;use different pages. There was a&nbsp;question of&nbsp;choosing a&nbsp;grouping of&nbsp;components.</span>
+                <span>After going through a&nbsp;lot of&nbsp;design systems, we&nbsp;settled on&nbsp;a&nbsp;structure grouped by&nbsp;type: banners, cards, buttons, etc.</span>
+                <span>But we&nbsp;needed to&nbsp;group not only components, we&nbsp;also had styles, design tokens and guidelines. This is&nbsp;how two main sections of&nbsp;our library appeared: Foundations and Components.</span>
+                <span>We&nbsp;also decided to&nbsp;flag pages to&nbsp;show the status of&nbsp;being ready. If&nbsp;the component is&nbsp;completed, it&nbsp;is&nbsp;marked in&nbsp;green, if&nbsp;it&nbsp;is&nbsp;in&nbsp;progress and not completed, it&nbsp;is&nbsp;marked in&nbsp;yellow.</span>
+            </div>
+            <div class="sectionTextAndImageImg smallImgMobile">
+                <img src="projects/gorod/ds/structure.png">
+            </div>
+        </div>
+        <div class="sectionTextAndImageLeft">
+            <div class="sectionTextAndImageImg smallImgMobile">
+                <img src="projects/gorod/ds/atom-ds.png">
+            </div>
+            <div class="sectionTextAndImageText sectionText70">
+                <b>Atomic Design</b>
+                <span>The atomic design approach was used in&nbsp;the legacy library, but we&rsquo;ve taken it&nbsp;to&nbsp;the next level with the new one. Combined with variants, our library became very flexible. Now we&nbsp;were able to&nbsp;design organisms like filter panels, where the smallest atom was a&nbsp;checkbox.</span>
+            </div>
+        </div>
+        <div class="sectionText">
+            <h4>Workflow Changes</h4>
+            <span>Library refactoring wouldn&rsquo;t be&nbsp;that effective without changing the workflow. Here are some changes that made designers&rsquo; life easier.</span>
+            <ol>
+                <li>Evolutionary Development. In&nbsp;order not to&nbsp;waste time on&nbsp;components that may never be&nbsp;used, we&nbsp;decided to&nbsp;develop our library in&nbsp;an&nbsp;evolutionary way, and create only those components that are needed.</li>
+                <li>Component quality control. There is&nbsp;a&nbsp;page called &laquo;To&nbsp;Review&raquo; where the designer posts a&nbsp;new component to&nbsp;be&nbsp;added to&nbsp;the library. I, as&nbsp;responsible for the library and review, checked the assembly of&nbsp;the component, the necessary states and descriptions.</li>
+                <li>No&nbsp;detaching. Strict component usage policy. In&nbsp;the final design review phase, we&nbsp;make sure that components from the library are used, otherwise missing components are added to&nbsp;the library.</li>
+                <li>Specifications. Enhanced practices with specifications for developers.</li>
+            </ol>
+        </div>
+        <div class="sectionText">
+        <div class="sectionTextAndImageRight">
+            <div class="sectionTextAndImageText">
+                <b>Refactoring Example: Button Component BEFORE</b>
+                <ul>
+                    <li>Unnecessary states such as&nbsp;&laquo;dark mode&raquo;.</li>
+                    <li>Poor assembly: useless layers and lack of&nbsp;responsiveness.</li>
+                    <li>No&nbsp;variants, set of&nbsp;components with a&nbsp;long name.</li>
+                </ul>
+            </div>
+            <div class="sectionTextAndImageImg">
+                <img src="projects/gorod/ds/component-before.png">
+            </div>
+        </div>
+        <div class="sectionTextAndImageRight">
+            <div class="sectionTextAndImageText">
+                <b>Refactoring Example: Button Component AFTER</b>
+                <ul>
+                    <li>
+                        Only necessary states.
+                    </li>
+                    <li>
+                        Concise and responsive assembly.
+                    </li>
+                    <li>
+                        Grouped in variants.
+                    </li>
+                </ul>
+            </div>
+            <div class="sectionTextAndImageImg">
+                <img src="projects/gorod/ds/component-after.png">
+            </div>
+        </div>
+        <div class="sectionText">
+            <h4>The process of adding components and reviewing</h4>
+            <span>New services and screens were made by&nbsp;a&nbsp;large number of&nbsp;designers from different pools. As&nbsp;a&nbsp;result, the following problems could appear:</span>
+            <ol>
+                <li>Duplicate components. Sometimes a&nbsp;designer can create a&nbsp;new component even though a&nbsp;similar one may already exist, and it&nbsp;is&nbsp;more logical to&nbsp;add a&nbsp;new state to&nbsp;it.</li>
+                <li>The naming of&nbsp;a&nbsp;new component can be&nbsp;poorly chosen.</li>
+                <li>A&nbsp;component may be&nbsp;assembled incorrectly, contain empty layers or&nbsp;layers with the wrong naming, be&nbsp;non-adaptive and not have all states.</li>
+                <li>A&nbsp;component may be&nbsp;assembled incorrectly, contain empty layers or&nbsp;layers with the wrong naming, be&nbsp;non-adaptive and not have all states.</li>
+                <li>A&nbsp;component may be&nbsp;placed in&nbsp;a&nbsp;library in&nbsp;such a&nbsp;way that it&nbsp;may be&nbsp;difficult to&nbsp;find&nbsp;it.</li>
+            </ol>
+            <span>Therefore, it&nbsp;was decided to&nbsp;conduct a&nbsp;review of&nbsp;the components. When a&nbsp;new component appeared, the designer had to&nbsp;show it&nbsp;on&nbsp;a&nbsp;meeting, and if&nbsp;this was not possible, then place it&nbsp;in&nbsp;the To&nbsp;Review tab. Once in&nbsp;a&nbsp;while, I&nbsp;or a&nbsp;colleague checked this tab, commented or&nbsp;made changes, after which the component was migrated to&nbsp;its corresponding page.</span>
+        </div>
+
+    </div>
+    </div>
+
+    <img src="projects/gorod/ds/ds-final.png" class="projectImage">
+    <div class="aboutProjectSection1024">
+        <div class="sectionText">
+            <h4>Results</h4>
+            <ol>
+                <li>Proper assembly of&nbsp;components greatly speeds up&nbsp;the design work. Designers don&rsquo;t have to&nbsp;tweak components or&nbsp;reinvent the wheel because components are responsive and behave as&nbsp;expected in&nbsp;layouts.</li>
+                <li>Variations is&nbsp;a&nbsp;huge plus, as&nbsp;designers don&rsquo;t have to&nbsp;look through the entire library to&nbsp;find what they need.</li>
+                <li>The new library structure has made navigation easier. It&nbsp;has become not only easier to&nbsp;find suitable components for layouts, but also to&nbsp;minimize the error of&nbsp;creating duplicate components.</li>
+                <li>Getting rid of&nbsp;unnecessary layers and states has speeded up&nbsp;work in&nbsp;Figma, as&nbsp;files take up&nbsp;less space.</li>
+                <li>The developers appreciated the new library. They noted the usability, the quality of&nbsp;the description of&nbsp;the guides, as&nbsp;well as&nbsp;all the states of&nbsp;the components. Even though we&nbsp;didn&rsquo;t have a&nbsp;full-fledged design system, it&nbsp;made it&nbsp;more convenient for developers to&nbsp;work with layouts, and reduced refinement and communication time.</li>
+                <li>The design library assumed a&nbsp;redaction policy for articles and events, which contributed to&nbsp;the preparation of&nbsp;well-formed articles by&nbsp;content managers.</li>
+            </ol>
+        </div>
+        <div class="sectionSeparator"></div>
+        <div class="sectionText" style="margin-bottom: 48px;">
+            <span>The design system was redesigned as&nbsp;part&nbsp;of <a href="gorod-main-eng.html">the redesign of&nbsp;City.Online portal.</a></span>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="footerMain">
+        <span>Rumin Maxim's portfolio</span>
+        <input type="button" class="solidButton" style="z-index: 1;"
+        onclick="location.href='#overlay';" value="contact me">
+        <div class="footerMainBG"></div>
+    </div>
+</div>
+<div id=overlay class=overlay>
+
+    <a class="modalCloseArea" href="#close" title="Close"></a>
+
+    <div class="popup">
+        <a class="contactsModalCloseCont" href="#close" title="Close">
+        <div class="contactsModalClose" href="#close" title="Close">        </div></a>
+
+        <div class="contactsModalCont">
+            <a class="contactsModalItem" href="mailto:ruminmaxim@gmail.com">
+                <div class="contactsModalIcon email"></div>
+                <span>ruminmaxim@gmail.com</span>
+            </a>
+            <a class="contactsModalItem" href="https://t.me/codexplorer" target="_blank">
+                <div class="contactsModalIcon telegram"></div>
+                <span>Telegram</span>
+            </a>
+            <a class="contactsModalItem" href="https://www.linkedin.com/in/ruminmaxim/" target="_blank">
+                <div class="contactsModalIcon linkedin"></div>
+                <span>Linkedin</span>
+            </a>
+            <a class="contactsModalItem" href="https://dribbble.com/ruminmaxim" target="_blank">
+                <div class="contactsModalIcon dribbble"></div>
+                <span>Dribbble</span>
+            </a>
+            <a class="contactsModalItem" href="https://www.behance.net/ruminmaxim" target="_blank">
+                <div class="contactsModalIcon behance"></div>
+                <span>Behance</span>
+            </a>
+            <a class="contactsModalItem" href="https://www.shutterstock.com/g/ryumin+maksim" target="_blank">
+                <div class="contactsModalIcon shutter"></div>
+                <span>Shutterstock Shop</span>
+            </a>
+        </div>
+    </div>
+
+</div>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>

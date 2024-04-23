@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width">
+    <meta charset="utf-8">
+    <title>
+        Создание дизайн-библиотеки
+        </title>
+    <link rel="stylesheet" media="screen" href="style.css">
+    <link rel="stylesheet" media="screen" href="stylemobile.css">
+    <link rel="stylesheet" media="screen" href="icons.css">
+    <!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();
+    for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+    k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+ 
+    ym(90798039, "init", {
+         clickmap:true,
+         trackLinks:true,
+         accurateTrackBounce:true,
+         webvisor:true
+    });
+ </script>
+ <noscript><div><img src="https://mc.yandex.ru/watch/90798039" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+ <!-- /Yandex.Metrika counter -->
+</head>
+
+<body class="bodyProject">
+    <a href="ru.html#gorod-library" class="backLink">
+        <div class="closeButton">
+        </div>
+    </a>
+    <div class="aboutProject">
+        <div class="aboutProjectSection1024">
+            <h1>Создание дизайн-библиотеки</h1>
+            <div class="sectionText">
+                <h4>Предыстория:</h4>
+                <span>В&nbsp;рамках<a href="gorod-main-ru.html"> проекта редизайна городского онлайн-портала</a>, команда дизайнеров должна была решить, что делать с&nbsp;библиотекой. По&nbsp;сути, было два варианта: создать новую или повторно использовать старую.</span>
+            </div>
+            <div class="sectionText">
+                <h4>Команда:</h4>
+                <span>
+                    Базовую переработку библиотеки делал я&nbsp;в&nbsp;паре с&nbsp;коллегой. На&nbsp;проекте были другие дизайнеры, но&nbsp;зачастую они занимались другими задачами. Позже в&nbsp;мои обязанности входил ревью добавляемых компонентов.
+                </span>
+            </div>
+            <div class="sectionSeparator"></div>
+
+            <div class="sectionTextAndImageRight">
+                <div class="sectionTextAndImageText sectionText50">
+                    <b>Повторно использовать существующую библиотеку или настроить новую?</b>
+                    <span>Изначально была старая библиотека с&nbsp;двумя связанными документами, внутри которых было 700+&nbsp;экранов. Была идея просто изменить стили и&nbsp;внешний вид компонентов, однако библиотека не&nbsp;была к&nbsp;этому готова из-за нескольких нюансов.
+                    </span>
+                </div>
+                <div class="sectionTextAndImageImg">
+                    <img src="projects/gorod/ds/files.png">
+                </div>
+            </div>
+            <div class="sectionText">
+                <ol class="olBold">
+                    <li>                    
+                            <b>Принципиально новый дизайн</b>
+                            <span>Во&nbsp;время редизайна платформы все макеты, элементы и&nbsp;опыт пользователя претерпели сильные изменения.</span>
+                            <span class="textGray">(в&nbsp;отличии, например, от&nbsp;моего <a href="anw-ds-rework-ru.html"> другого проекта</a>, где мы&nbsp;специально делали редизайн так, чтобы сохранить HTML структуру и&nbsp;дизайн-систему)</span>
+                        </li>
+                        <li>                    
+                            <b>Сборка макетов</b>
+                            <span>Несмотря на&nbsp;то, что нам не&nbsp;пришлось&nbsp;бы собирать макеты с&nbsp;нуля, их&nbsp;все равно пришлось&nbsp;бы радикально корректировать, чтобы они выглядели должным образом, так что это не&nbsp;сэкономило&nbsp;бы много времени.</span>
+                        </li>
+                        <li>                    
+                            <b>Детачнутые компоненты</b>
+                            <span>Довольно распространенная практика в&nbsp;устаревших файлах поэтому даже если&nbsp;бы мы&nbsp;обновили компоненты, мы&nbsp;не&nbsp;смогли&nbsp;бы запушить изменения.</span>
+                        </li>
+                        <li>                    
+                            <b>Плохо собранные компоненты</b>
+                            <span>
+                                Многие компоненты были плохо собраны, были неадаптивны и&nbsp;имели лишние слои.
+                            </span>
+                        </li>
+                        <li>                    
+                            <b>Неиспользуемые компоненты</b>
+                            <span>
+                                Было много компонентов, сделанных &laquo;на&nbsp;всякий случай&raquo; (например вариации для темной темы, хотя темной темы на&nbsp;данный момент не&nbsp;было).
+                            </span>
+                        </li>
+                        <li>                    
+                            <b>Трудно ориентироваться в&nbsp;структуре </b>
+                            <span>
+                                Все компоненты и&nbsp;стили отображались на&nbsp;одной странице, поэтому было сложно найти&nbsp;то, что нужно. Мало того, компоненты не&nbsp;были сгруппированы в&nbsp;варианты (на&nbsp;тот момент эта функция была новинкой).
+                            </span>
+                        </li>
+                </ol>
+            </div>
+    </div>
+    <img src="projects/gorod/ds/old.png" class="projectImage">
+    <div class="aboutProjectSection1024">
+        <div class="sectionText">
+            <h4>Окончательное решение</h4>
+            <span>Ввиду всех этих проблем, мы&nbsp;решили создать новую библиотеку, поскольку перепроектирование старых компонентов заняло столько&nbsp;же времени (или даже больше) чем создание новых, с&nbsp;учетом проблем, которые были в&nbsp;устаревшей библиотеке. Это был шанс начать все заново и&nbsp;избежать предыдущих ошибок, продолжая при этом использовать передовой опыт.</span>
+        </div>
+        <div class="sectionText">
+            <h4>Исследование библиотеки дизайна</h4>
+            <span>Как только было принято решение о&nbsp;создании новой библиотеки, мы&nbsp;начали наше исследование с&nbsp;бенчмаркинга. Я&nbsp;просмотрел более 20&nbsp;различных дизайн-систем и&nbsp;библиотек, основные аспекты, которые мы&nbsp;хотели&nbsp;бы получить, это:</span>
+            <ul>
+                <li>Структура файла и&nbsp;страниц, как сгруппированы компоненты.</li>
+                <li>Как собираются компоненты.</li>
+                <li>Как компоненты раскладываются с&nbsp;точки зрения атомарного подхода.</li>
+            </ul>
+            <img src="projects/gorod/ds/design-systems.png" class="projectImage">
+        </div>
+        <div class="sectionText sectionTextAdditional">
+            <span>Мы также взяли интервью у некоторых других дизайнеров в нашей компании, которые имели дело с обширными библиотеками проектов. Они не только поделились некоторыми полезными знаниями с точки зрения структурирования, но и с точки зрения полезных инструментов и приемов.
+            </span>
+        </div>
+        <div class="sectionTextAndImageRight">
+            <div class="sectionTextAndImageText sectionText70">
+                <b>Структура дизайн-библиотеки</b>
+                <span>Мы&nbsp;точно знали, что вариант со&nbsp;всеми компонентами на&nbsp;одной странице нам не&nbsp;подходит, так как по&nbsp;нему сложно ориентироваться, поэтому решили использовать разные страницы. Встал вопрос выбора группировки компонентов.
+                </span>
+                <span>Перебрав множество дизайн-систем, остановились на&nbsp;структуре с&nbsp;группировкой по&nbsp;типам: баннеры, карточки, кнопки и&nbsp;т.д.
+                </span>
+                <span>Но&nbsp;группировать нужно было не&nbsp;только компоненты, у&nbsp;нас были так&nbsp;же стили, дизайн-токены и&nbsp;гайдлайны. Так появилось два основных раздела нашей библиотеки: Foundations и&nbsp;Components.
+                </span>
+                <span>Мы&nbsp;также решили помечать страницы, чтобы показать статус готовности. Если компонент выполнен, он&nbsp;помечается зеленым цветом, если он&nbsp;в&nbsp;работе и&nbsp;не&nbsp;доделан&nbsp;&mdash; желтым.
+                </span>
+            </div>
+            <div class="sectionTextAndImageImg smallImgMobile">
+                <img src="projects/gorod/ds/structure.png">
+            </div>
+        </div>
+        <div class="sectionTextAndImageLeft">
+            <div class="sectionTextAndImageImg smallImgMobile">
+                <img src="projects/gorod/ds/atom-ds.png">
+            </div>
+            <div class="sectionTextAndImageText sectionText70">
+                <b>Атомный дизайн</b>
+                <span>Подход атомарного проектирования использовался в&nbsp;устаревшей библиотеке, но&nbsp;в&nbsp;новой мы&nbsp;подняли его на&nbsp;новый уровень. В&nbsp;сочетании с&nbsp;вариантами наша библиотека стала очень гибкой. Теперь мы&nbsp;смогли разработать такие организмы как фильтрующие панели, где самый маленький атом был чекбоксом.
+                </span>
+            </div>
+        </div>
+        <div class="sectionText">
+            <h4>Изменения рабочего процесса</h4>
+            <span>Рефакторинг библиотеки не&nbsp;был&nbsp;бы столь эффективным без изменения рабочего процесса. Вот некоторые изменения, которые облегчили жизнь дизайнерам. </span>
+            <ol>
+                <li>Эволюционное развитие. Чтобы не&nbsp;тратить время на&nbsp;компоненты, которые могут никогда не&nbsp;использоваться, мы&nbsp;решили развивать нашу библиотеку эволюционно, и&nbsp;создавать в&nbsp;конкретный момент времени только те&nbsp;компоненты, которые нужны.</li>
+                <li>Контроль качества компонента. Существует страница под названием &laquo;To&nbsp;Review&raquo;, где дизайнер размещает новый компонент, который следует добавить в&nbsp;библиотеку. Я, как ответственный за&nbsp;библиотеку и&nbsp;ревью, проверял, хорошо&nbsp;ли собран компонент, имеет&nbsp;ли необходимые состояния и&nbsp;описания.</li>
+                <li>Без детачей, строгая политика использовать только компоненты. На&nbsp;заключительном этапе проверки проекта мы&nbsp;проверяли, что используются компоненты из&nbsp;библиотеки, в&nbsp;противном случае недостающие компоненты добавлялись в&nbsp;библиотеку.</li>
+                <li>Спецификации. Усовершенствованные практики со&nbsp;спецификациями для дизайнеров и&nbsp;разработчиков.</li>
+            </ol>
+        </div>
+        <div class="sectionTextAndImageRight">
+            <div class="sectionTextAndImageText">
+                <b>Пример рефакторинга: Компонент кнопки ДО</b>
+                <ul>
+                    <li>
+                        Ненужные состояния, такие как &laquo;темная тема&raquo;.
+                    </li>
+                    <li>
+                        Плохая сборка: бесполезные слои и&nbsp;отсутствие отзывчивости.
+                    </li>
+                    <li>
+                        Отсутствие вариантов, набор компонентов с&nbsp;длинным названием.
+                    </li>
+                </ul>
+            </div>
+            <div class="sectionTextAndImageImg">
+                <img src="projects/gorod/ds/component-before.png">
+            </div>
+        </div>
+        <div class="sectionTextAndImageRight">
+            <div class="sectionTextAndImageText">
+                <b>Пример рефакторинга: Компонент кнопки ПОСЛЕ</b>
+                <ul>
+                    <li>
+                        Только необходимые состояния.
+                    </li>
+                    <li>
+                        Лаконичная и отзывчивая сборка.
+                    </li>
+                    <li>
+                        Сгруппированы по вариантам.
+                    </li>
+                </ul>
+            </div>
+            <div class="sectionTextAndImageImg">
+                <img src="projects/gorod/ds/component-after.png">
+            </div>
+        </div>
+        <div class="sectionText">
+            <h4>Процесс по&nbsp;добавлению компонентов и&nbsp;ревью</h4>
+            <span>Новые сервисы и&nbsp;экраны делались большим количеством дизайнеров из&nbsp;разных пулов. Вследствие этого могли появляться следующие проблемы:</span>
+            <ol>
+                <li>Появление дублей компонентов. Иногда дизайнер может создать новый компонент, хотя может уже существовать подобный, и&nbsp;логичнее добавить ему новое состояние.</li>
+                <li>Нейминг нового компонента может быть подобран неудачно.</li>
+                <li>Компонент может быть собран неправильно, содержать пустые слои или слои с&nbsp;неправильным неймингом, быть неадаптивным и&nbsp;содержать не&nbsp;все состояния.</li>
+                <li>Компонент может быть собран неправильно, содержать пустые слои или слои с&nbsp;неправильным неймингом, быть неадаптивным и&nbsp;содержать не&nbsp;все состояния.</li>
+                <li>Компонент может быть размещен в&nbsp;библиотеке так, что его может быть трудно найти.</li>
+            </ol>
+            <span>Поэтому было решено проводить ревью компонентов. При появлении нового компонента, дизайнер должен был показать его на&nbsp;митинге, а&nbsp;если такой возможности не&nbsp;было, то&nbsp;разместить его во&nbsp;вкладку To&nbsp;Review. Раз в&nbsp;некоторое время я&nbsp;или коллега проверяли эту вкладку, давали комментарии или вносили изменения, после чего компонент мигрировал на&nbsp;соответствующую ему страницу.</span>
+        </div>
+
+    </div>
+
+    <img src="projects/gorod/ds/ds-final.png" class="projectImage">
+    <div class="aboutProjectSection1024">
+        <div class="sectionText">
+            <h4>Результаты</h4>
+            <ol>
+                <li>Правильная сборка компонентов значительно ускоряет работу по&nbsp;проектированию. Дизайнерам не&nbsp;нужно детачить компоненты или изобретать колесо, поскольку компоненты адаптивны и&nbsp;ведут себя в&nbsp;макетах так, как ожидается.</li>
+                <li>Варианты&nbsp;&mdash; это огромный плюс, так как дизайнерам не&nbsp;нужно просматривать всю библиотеку, чтобы найти&nbsp;то, что необходимо.</li>
+                <li>Новая структура библиотеки упростила навигацию. Стало не&nbsp;только легче найти подходящие компоненты для макетов, но&nbsp;и&nbsp;минимизировать ошибку создания дубликатов компонентов.</li>
+                <li>Избавление от&nbsp;ненужных слоев и&nbsp;состояний ускорило работу в&nbsp;Figma, так как файлы стали занимать меньше места.</li>
+                <li>Разработчики оценили новую библиотеку. Они отметили удобство использования, качество описания гайдов, а&nbsp;так&nbsp;же все состояния компонентов. Пусть у&nbsp;нас не&nbsp;было полноценной дизайн-системы, однако разработчикам стало удобнее работать с&nbsp;макетами, сократилось время рефаймента и&nbsp;коммуникаций на&nbsp;тему состояний, в&nbsp;сравнении с&nbsp;прошлой версией библиотеки.</li>
+                <li>Дизайн-библиотека предполагала редполитику в&nbsp;отношении статей и&nbsp;мероприятий, что способствовало подготовке правильно оформленных статей контент-менеджерами.</li>
+            </ol>
+        </div>
+        <div class="sectionSeparator"></div>
+        <div class="sectionText" style="margin-bottom: 48px;">
+            <span>Переработка дизайн-системы была сделана в рамках <a href="gorod-main-ru.html">редизайна городского онлайн-портала.</a></span>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="footerMain">
+        <span>Портфолио Рюмина Максима</span>
+        <input type="button" class="solidButton" style="z-index: 1;"
+                onclick="location.href='#overlay';" value="связаться">
+        <div class="footerMainBG"></div>
+    </div>
+</div>
+<div id=overlay class=overlay>
+
+    <a class="modalCloseArea" href="#close" title="Close"></a>
+
+    <div class="popup">
+        <a class="contactsModalCloseCont" href="#close" title="Close">
+        <div class="contactsModalClose" href="#close" title="Close">        </div></a>
+
+        <div class="contactsModalCont">
+            <a class="contactsModalItem" href="mailto:ruminmaxim@gmail.com">
+                <div class="contactsModalIcon email"></div>
+                <span>ruminmaxim@gmail.com</span>
+            </a>
+            <a class="contactsModalItem" href="https://t.me/codexplorer" target="_blank">
+                <div class="contactsModalIcon telegram"></div>
+                <span>Telegram</span>
+            </a>
+            <a class="contactsModalItem" href="https://www.linkedin.com/in/ruminmaxim/" target="_blank">
+                <div class="contactsModalIcon linkedin"></div>
+                <span>Linkedin</span>
+            </a>
+            <a class="contactsModalItem" href="https://dribbble.com/ruminmaxim" target="_blank">
+                <div class="contactsModalIcon dribbble"></div>
+                <span>Dribbble</span>
+            </a>
+            <a class="contactsModalItem" href="https://www.behance.net/ruminmaxim" target="_blank">
+                <div class="contactsModalIcon behance"></div>
+                <span>Behance</span>
+            </a>
+            <a class="contactsModalItem" href="https://www.shutterstock.com/g/ryumin+maksim" target="_blank">
+                <div class="contactsModalIcon shutter"></div>
+                <span>Shutterstock Shop</span>
+            </a>
+        </div>
+    </div>
+
+</div>
+    <script src="https://unpkg.com/@popperjs/core@2"></script>
+    <script src="https://unpkg.com/tippy.js@6"></script>
+    <script src="jquery-3.6.0.min.js"></script>
+    <script src="script.js"></script>
+</body>

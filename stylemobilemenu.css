@@ -1,0 +1,202 @@
+
+
+/* Menu mobileMenu */
+.mobileMenu {
+    display: none;
+	background: rgba(0, 0, 0, 0.9);
+	overflow: hidden;
+	height: 48px;
+	width: 100%;
+	z-index: 1;
+	position: fixed;
+	transition: all 0.4s ease-out, background 1s ease-out;
+}
+.mobileMenu.menuOpen {
+	height: 100%;
+	background: #111;
+	transition: all 0.3s ease-out, background 0.8s ease-out;
+}
+
+.mobileMenuButtonContainer{
+	padding: 13px 0 0 24px;
+	position: relative;
+	display: inline-block;
+	z-index: 2;
+	float: left;
+	/* Simply change property to float left to switch icon side :) */
+	height: 48px;
+	width: 48px;
+}
+
+/* Menu List items */
+.mobileMenuDrop {
+	clear: both;
+}
+.mobileMenu ul.menuUl {
+	position: relative;
+	display: block;
+	padding: 0px 24px 0;
+	list-style: none;
+	margin-bottom: 20px;
+}
+
+.menuUlItem{
+	height: 38px;
+	padding: 2px 8px;
+}
+.mobileMenu ul.menuUl li.menuUlItem a {
+	position: relative;
+	color: #fff;
+	text-decoration: none;
+	font-size: 16px;
+	line-height: 2.8;
+	width: 100%;
+	-webkit-tap-highlight-color: transparent;
+}
+.mobileMenu ul.menuUl li.menuUlItem {
+	border-bottom: 1px solid #333;
+	margin-top: 5px;
+	opacity: 0;
+	transition: opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99), -webkit-transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+	transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+	transition: transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99), opacity 0.6s cubic-bezier(0.4, 0.01, 0.165, 0.99), -webkit-transform 0.5s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+.mobileMenu ul.menuUl li.menuUlItem:nth-child(1) {
+	transition-delay: 0.35s;
+}
+.mobileMenu ul.menuUl li.menuUlItem:nth-child(2) {
+	transition-delay: 0.3s;
+}
+.mobileMenu ul.menuUl li.menuUlItem:nth-child(3) {
+	transition-delay: 0.25s;
+}
+.mobileMenu ul.menuUl li.menuUlItem:nth-child(4) {
+	transition-delay: 0.2s;
+}
+.mobileMenu ul.menuUl li.menuUlItem:nth-child(5) {
+	transition-delay: 0.15s;
+}
+.mobileMenu ul.menuUl li.menuUlItem:nth-child(6) {
+	transition-delay: 0.1s;
+}
+.mobileMenu ul.menuUl li.menuUlItem:nth-child(7) {
+	transition-delay: 0.05s;
+}
+.mobileMenu.menuOpen ul.menuUl li.menuUlItem {
+	opacity: 1;
+}
+.mobileMenu.menuOpen ul.menuUl li.menuUlItem:nth-child(1) {
+	transition-delay: 0.05s;
+}
+.mobileMenu.menuOpen ul.menuUl li.menuUlItem:nth-child(2) {
+	transition-delay: 0.1s;
+}
+.mobileMenu.menuOpen ul.menuUl li.menuUlItem:nth-child(3) {
+	transition-delay: 0.15s;
+}
+.mobileMenu.menuOpen ul.menuUl li.menuUlItem:nth-child(4) {
+	transition-delay: 0.2s;
+}
+.mobileMenu.menuOpen ul.menuUl li.menuUlItem:nth-child(5) {
+	transition-delay: 0.25s;
+}
+.mobileMenu.menuOpen ul.menuUl li.menuUlItem:nth-child(6) {
+	transition-delay: 0.3s;
+}
+.mobileMenu.menuOpen ul.menuUl li.menuUlItem:nth-child(7) {
+	transition-delay: 0.35s;
+}
+
+/* Menu Icon */
+.menuIconContainer {
+	position: relative;
+	display: inline-block;
+	z-index: 2;
+	float: right;
+	/* Simply change property to float left to switch icon side :) */
+	height: 48px;
+	width: 48px;
+	cursor: pointer;
+	-webkit-tap-highlight-color: transparent;
+	-webkit-transform: rotate(0deg);
+	transform: rotate(0deg);
+	transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+    margin: 0 12px 0 0;
+}
+.menuIconContainer #menuicon {
+	width: 20px;
+	height: 10px;
+	position: relative;
+	display: block;
+	margin: -5px auto 0;
+	top: 50%;
+}
+#menuicon .bar {
+	width: 100%;
+	height: 1px;
+	display: block;
+	position: relative;
+	background: #fff;
+	transition: all 0.3s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+}
+#menuicon .bar.bar1 {
+	-webkit-transform: translateY(0px) rotate(0deg);
+	transform: translateY(0px) rotate(0deg);
+}
+#menuicon .bar.bar2 {
+	-webkit-transform: translateY(4px) rotate(0deg);
+	transform: translateY(4px) rotate(0deg);
+}
+#menuicon .bar.bar3 {
+	-webkit-transform: translateY(8px) rotate(0deg);
+	transform: translateY(8px) rotate(0deg);
+}
+.menuOpen .menuIconContainer {
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+}
+.menuOpen .menuIconContainer #menuicon .bar {
+	transition: all 0.4s cubic-bezier(0.4, 0.01, 0.165, 0.99);
+	transition-delay: 0.1s;
+}
+.menuOpen .menuIconContainer #menuicon .bar.bar1 {
+	-webkit-transform: translateY(4px) rotate(45deg);
+	transform: translateY(4px) rotate(45deg);
+}
+.menuOpen .menuIconContainer #menuicon .bar.bar2 {
+	-webkit-transform: translateY(3px) rotate(-45deg);
+	transform: translateY(3px) rotate(-45deg);
+}
+
+.menuOpen .menuIconContainer #menuicon .bar.bar3 {
+	-webkit-transform: translateY(3px) rotate(-45deg);
+	transform: translateY(3px) rotate(-45deg);
+    scale: 0;
+}
+
+.menuUlItemIcon {
+		display: inline-block;
+		width:  16px;
+		height: 16px;
+		background-color: rgb(255, 255, 255);
+}
+
+.menuUlItemContact{
+	display: flex;
+	width: 100%;
+	gap: 6px;
+	align-items: center;
+	height: 110%;
+}
+
+
+@media only screen and (max-width: 840px) {
+    main {
+        padding: 72px 24px 0px 24px;}
+    .bodyIndex {
+        padding: 0 0 0px 0;
+    }
+    .mobileMenu{
+        display: block;
+    }
+}

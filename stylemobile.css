@@ -1,0 +1,196 @@
+@media only screen and (max-width: 840px) {
+    html {
+        scroll-behavior: auto;
+    }
+    /* STYLES */
+    H1 {
+        font-size: 28px;
+        line-height: 36px;
+    }
+
+    .aboutMeName{
+        font-size: 34px;
+        line-height: 52px;
+    }
+
+    .aboutMeContacts {
+        display: none;
+    }
+
+    .aboutMeDescription {
+        width: 100%;
+    }
+
+    /* MENU */
+
+    .menu {
+        display: none;
+    }
+
+    .menuOpposite {
+        display: none;
+    }
+
+    /* MAIN PAGE - TOP PART */
+
+    main {
+        padding: 72px 24px 24px 24px;
+    }
+
+    .summary {
+        justify-content: space-between;
+        box-sizing: border-box;
+        display: flex;
+    }
+
+
+    .summary {
+        flex-direction: column;
+    }
+
+    /* .aboutMeNameAndStatus {
+        align-self: center;
+        justify-content: center;
+    } */
+
+    .aboutMePhoto {
+        width: 220px;
+        flex-basis: 220px;
+        height: 220px;
+        order: -1;
+        align-self: center;
+        margin: 0 0 12px 0;
+    }
+
+    .aboutMe {
+        padding: 0;
+    }
+
+    .aboutMePosition {
+        align-self: center;
+    }
+
+    .aboutMePosition span {
+        text-align: center;
+    }
+
+    /* .aboutMeKeyInformation {
+        justify-content: center;
+    } */
+
+    .aboutMeKeyInformation {
+        margin: 0px 0 16px 0;
+    }
+
+    .aboutMeKeyInformation div {
+        display: inline-flex;
+        max-width: 16px;
+        flex-grow: 1;
+        flex-shrink: 1;
+        flex-basis: auto;
+        align-self: auto;
+    }
+
+    .aboutMeKeyInformation div.aboutMeKeyInformationSeparator {
+        flex-grow: 2;
+        flex-shrink: 2;
+        height: 22px;
+        max-width: 32px;
+        background-image: url('separator.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .aboutMeKeyInformationMobile {
+        display: inline-flex;
+    }
+
+    .aboutMeKeyInformationDesktop {
+        display: none;
+    }
+
+    /* MAIN PAGE - PORTFOLIO */
+
+    .portfolioItem {
+        flex-direction: column;
+        margin-top: 24px;
+    }
+
+    .portfolioEmployer {
+        flex-direction: row;
+        flex-basis: 0px;
+        margin: 0 0 16px 0;
+    }
+
+    .portfolioEmployer :first-child {
+        margin: 0 12px 0 0;
+    }
+
+    .portfolioCaseContainer{
+        padding: 24px 16px;
+    }
+    .closeButton {
+        top: 10px !important;
+    }
+
+    /* PAGE PROJECT - CONTENT SECTIONS - SECTION TEXT+IMAGE */
+
+    .aboutProjectSection1024 {
+        margin: 0px 24px 0px 24px;
+    }
+
+    .sectionTextAndImageLeft{
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+    .sectionTextAndImageRight{
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .sectionTextAndImageText {
+        align-items: center;
+        width: 100%;
+        flex: 0 0 auto;
+    }
+
+    .sectionTextAndImageImg {
+        flex: 1 1 100%;
+        min-width: 0;
+        width: 100%;
+        justify-content: center;
+    align-items: center;
+    display: flex;
+
+    }
+
+    .sectionTextAndImageImg {
+        flex: 1 1 100%;
+        min-width: 0;
+        width: 100%;
+    }
+
+    .footerMain input {
+        display: none;
+    }
+
+    .smallImgMobile{
+        max-width: 360px !important;
+    }
+   
+}
+
+
+
+@media only screen and (max-width: 640px) {
+    .caseContainerRow {
+        flex-direction: column;
+    }
+    
+    .caseItem {
+        width: 100%;
+    }
+
+
+
+}
