@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title | safe }}</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/case.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    {% if pageType == "home" %}<link rel="stylesheet" href="assets/css/mobile-menu.css">{% endif %}
+    <link rel="stylesheet" href="assets/css/icons.css">
+</head>
+<body class="{{ bodyClass }}"{% if bodyId %} id="{{ bodyId }}"{% endif %}>
+    {{ content | safe }}
+    {% if pageType == "home" %}
+    <script src="https://unpkg.com/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+    <script src="https://unpkg.com/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js"></script>
+    {% endif %}
+    <script src="assets/js/site.js"></script>
+</body>
+</html>

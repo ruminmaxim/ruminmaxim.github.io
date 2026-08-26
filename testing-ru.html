@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Опросы и&nbsp;тестирования</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/case.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <link rel="stylesheet" href="assets/css/icons.css">
+</head>
+<body class="bodyProject">
+    
+<a href="ru.html" class="backLink" aria-label="Закрыть">
+    <div class="closeButton"></div>
+</a>
+<div class="aboutProject">
+    <div class="aboutProjectSection1024 testingCase">
+    <div class="sectionText testingIntro">
+        <h1>Опросы и&nbsp;тестирования</h1>
+        <span class="testingSubtitle">Два похожих сценария с&nbsp;разной логикой</span>
+    </div>
+
+    <div class="sectionText testingLead">
+        <span>В&nbsp;LMS нужно было создать два сервиса: опросы для&nbsp;сбора обратной связи и&nbsp;тестирования для&nbsp;проверки знаний.</span>
+        <span>В&nbsp;обоих случаях администратор собирает вопросы и&nbsp;отправляет ссылку сотрудникам.</span>
+    </div>
+</div>
+
+<img src="projects/testing/Testing-base.png" class="projectImage testingFullImage" alt="Общее основание сервиса опросов и&nbsp;тестирований">
+
+<div class="aboutProjectSection1024 testingCase">
+    <div class="sectionText testingLead">
+        <span>Но&nbsp;за&nbsp;похожими сценариями скрывалась разная логика: опрос сохраняет мнение пользователя, а&nbsp;тест должен знать правильные ответы, считать результат и&nbsp;попытки. Нужно было спроектировать интерфейсы так, чтобы сохранить общее основание и&nbsp;логику.</span>
+    </div>
+</div>
+
+<img src="projects/testing/Testing-progress.png" class="projectImage testingFullImage" alt="Прогресс прохождения опросов и&nbsp;тестирований">
+
+<div class="aboutProjectSection1024 testingCase testingCaseBody">
+    <div class="testingSplit testingSplitRight">
+        <div class="sectionText testingTextColumn">
+            <h4>Сложную модель разложили на&nbsp;сущности</h4>
+            <span>В&nbsp;основе сервисов — двухуровневая архитектура. Сначала администратор создаёт шаблон: добавляет вопросы, выбирает их типы и&nbsp;порядок. Затем на&nbsp;его основе можно запустить несколько опросов или тестов для&nbsp;разных аудиторий и&nbsp;сценариев. Каждый запуск получает собственные настройки и&nbsp;уникальную ссылку. Это позволяет переиспользовать содержание и&nbsp;автоматически создавать запуски через API.</span>
+            <span>Я проектировал интерфейс этой модели: разделял сущности, определял структуру карточек и&nbsp;связывал их в&nbsp;последовательный сценарий.</span>
+        </div>
+        <div class="testingImagePanel testingModelImage">
+            <img src="projects/testing/Testing-model.png" alt="Модель сущностей сервиса опросов и&nbsp;тестирований">
+        </div>
+    </div>
+
+    <div class="testingSplit testingSplitLeft">
+        <div class="testingImagePanel">
+            <img src="projects/testing/Testing-fork.png" alt="Форк сервиса тестирований на&nbsp;базе опросов">
+        </div>
+        <div class="sectionText testingTextColumn testingTextColumnRight">
+            <h4>Тестирования построили на&nbsp;базе опросов</h4>
+            <span>Когда понадобился сервис тестирований, команда смогла использовать опросы как техническую и&nbsp;интерфейсную основу: разработчики сделали fork бэкенда и&nbsp;фронтенда.</span>
+            <span>Заложенные в&nbsp;дизайне самостоятельные карточки, типы вопросов и&nbsp;настройки не&nbsp;пришлось проектировать заново — их расширили правильными ответами, блоками вопросов, проходным баллом, попытками и&nbsp;таймером. Новый сервис получил собственную логику, но&nbsp;сохранил знакомую структуру.</span>
+        </div>
+    </div>
+
+    <div class="testingSplit testingSplitLeft testingFinalBlock">
+        <div class="testingImagePanel testingSmallImage">
+            <img src="projects/testing/Testing-another-services.png" alt="Использование платформы опросов в&nbsp;других сервисах">
+        </div>
+        <div class="sectionText testingWideText">
+            <h4>Общая платформа для&nbsp;банковских сценариев</h4>
+            <span>В&nbsp;результате появились два самостоятельных сервиса на&nbsp;общей продуктовой модели. Администраторы создают шаблоны, управляют запусками и&nbsp;выгружают ответы, а&nbsp;сотрудники проходят опросы и&nbsp;тесты в&nbsp;простом линейном интерфейсе.</span>
+            <span>Помимо этого, сервисами можно управлять по&nbsp;API. Оба сервиса были встроены в&nbsp;другие продукты: например, сервис Вовлеченности Сотрудников использует механизм Опросов для&nbsp;сбора обратной связи, а&nbsp;Тестирования были внедрены в&nbsp;образовательные курсы LMS.</span>
+        </div>
+    </div>
+</div>
+
+    
+    <div class="footerMain">
+    <span>Портфолио Рюмина Максима</span>
+    
+    <button type="button" class="solidButton" data-open-contacts>связаться</button>
+    
+    <div class="footerMainBG"></div>
+</div>
+
+</div>
+<div id="overlay" class="overlay">
+    <a class="modalCloseArea" href="#close" aria-label="Закрыть"></a>
+    <div class="popup">
+        <div class="contactsModalCont">
+            <a class="contactsModalItem" href="mailto:ruminmaxim@gmail.com">
+                <div class="contactsModalIcon email"></div>
+                <span>Написать email</span>
+            </a>
+            <a class="contactsModalItem" href="https://t.me/codexplorer" target="_blank" rel="noopener noreferrer">
+                <div class="contactsModalIcon telegram"></div>
+                <span>Написать в&nbsp;Telegram</span>
+            </a>
+            <a class="contactsModalItem" href="https://www.linkedin.com/in/ruminmaxim/" target="_blank" rel="noopener noreferrer">
+                <div class="contactsModalIcon linkedin"></div>
+                <span>Профиль на&nbsp;LinkedIn</span>
+            </a>
+        </div>
+        <a class="contactsModalCloseCont" href="#close" aria-label="Закрыть">
+            <div class="contactsModalClose"></div>
+        </a>
+    </div>
+</div>
+
+
+    
+    <script src="assets/js/site.js"></script>
+</body>
+</html>

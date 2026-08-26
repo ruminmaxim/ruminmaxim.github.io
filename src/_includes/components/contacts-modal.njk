@@ -1,0 +1,22 @@
+<div id="overlay" class="overlay">
+    <a class="modalCloseArea" href="#close" aria-label="{{ copy.close }}"></a>
+    <div class="popup">
+        <div class="contactsModalCont">
+            <a class="contactsModalItem" href="mailto:{{ site.email }}">
+                <div class="contactsModalIcon email"></div>
+                <span>{{ copy.emailAction }}</span>
+            </a>
+            <a class="contactsModalItem" href="{{ site.telegram }}" target="_blank" rel="noopener noreferrer">
+                <div class="contactsModalIcon telegram"></div>
+                <span>{{ copy.telegramAction | safe }}</span>
+            </a>
+            <a class="contactsModalItem" href="{{ site.linkedin }}" target="_blank" rel="noopener noreferrer">
+                <div class="contactsModalIcon linkedin"></div>
+                <span>{{ copy.linkedinAction | safe }}</span>
+            </a>
+        </div>
+        <a class="contactsModalCloseCont" href="#close" aria-label="{{ copy.close }}">
+            <div class="contactsModalClose"></div>
+        </a>
+    </div>
+</div>

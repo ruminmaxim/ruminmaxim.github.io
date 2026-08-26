@@ -1,0 +1,117 @@
+---
+layout: layouts/case.njk
+title: "AI Development Plan"
+lang: en
+permalink: ai-idb-eng.html
+backHref: "index.html"
+---
+<div class="aboutProjectSection1024">
+    <h1>AI Development Plan</h1>
+    <div class="sectionText">
+        <span class="aiIdpSubtitle">How I designed an AI scenario that turns skill data or an employee&rsquo;s own request into an individual development plan based on the 70-20-10 model.</span>
+    </div>
+    <div class="aiIdpSummary">
+        <div class="aiIdpSummaryItem">
+            <h5>Problem</h5>
+            <span>Employees had to identify their own growth areas, turn them into goals, and split actions by the 70-20-10 model. The process was cognitively heavy and took a lot of time.</span>
+        </div>
+        <div class="aiIdpSummaryItem">
+            <h5>Task</h5>
+            <span>We needed to add goal generation to an existing IDP service without changing how development plans were stored or edited.</span>
+        </div>
+        <div class="aiIdpSummaryItem">
+            <h5>My role</h5>
+            <span>I shaped the product hypothesis, designed the user flow, neural pipeline, system prompts, and interface, and led the project through launch.</span>
+        </div>
+        <div class="aiIdpSummaryItem">
+            <h5>Result</h5>
+            <span>The feature launched as a pilot. More than 1,000 employees opened the AI scenario, and over 200 added generated goals to their development plans.</span>
+        </div>
+    </div>
+</div>
+<img src="projects/ai-idp/ai-idb.png" class="projectImage" alt="AI Development Plan cover">
+<div class="aboutProjectSection1024">
+    <div class="sectionText">
+        <h4>The hard part of IDP was not the form, but the thinking behind it</h4>
+        <span>The individual development plan already existed in the organization as a corporate service. Employees could create goals, add subtasks, track progress, and connect development with specific skills.</span>
+        <span>The problem was not the number of fields or interface complexity. To create a meaningful plan, an employee had to understand what they lacked, choose a priority, turn it into a goal, come up with relevant actions, and distribute them according to the 70-20-10 logic.</span>
+        <span>I framed this as a cognitive load problem and connected it with coverage: the more independent thinking the plan requires, the more likely employees are to fill it in formally or avoid creating it at all.</span>
+    </div>
+
+    <div class="sectionText sectionTextAdditionalYellow">
+        <span>This is a hybrid case: product work, UX scenario design, and AI solution design.</span>
+        <span>AI was used here to lower the threshold for creating an IDP.</span>
+    </div>
+
+    <div class="sectionTextAndImageRight">
+        <div class="sectionTextAndImageText sectionTextOneThird">
+            <h4>First decision: keep the existing IDP intact</h4>
+            <span>I decided not to build a new product from scratch. A simpler and more reliable path was to generate a draft for the existing IDP.</span>
+            <span>The neural network takes on the most difficult part: it formulates goals, writes descriptions, and suggests tasks. Once the employee saves the result, the draft becomes a regular development plan that can be edited manually.</span>
+            <span>This approach reduced development risk and cost: the bank&rsquo;s back end continued to work as before, while AI handled only the first and hardest step.</span>
+        </div>
+        <div class="sectionTextAndImageImg">
+            <img src="projects/ai-idp/idb.png" alt="Generated AI Development Plan result">
+        </div>
+    </div>
+
+    <div class="sectionTextAndImageLeft">
+        <div class="sectionTextAndImageImg">
+            <img src="projects/ai-idp/pipeline.png" alt="AI pipeline diagram">
+        </div>
+        <div class="sectionTextAndImageText sectionTextOneThird">
+            <h4>Second decision: split generation into steps</h4>
+            <span>At first I wanted to send one request to the model, but that process was hard to control. I split the task between two AI agents. The first acts as a career assistant: it analyzes skills and suggests growth focuses.</span>
+            <span>A glue layer then combines these focuses with the user&rsquo;s settings. After that, the second agent assembles the final plan using the 70-20-10 model.</span>
+            <span>To make the generated text land in the right fields automatically, I defined a strict response format for the second agent: title, description, group_70, group_20, and group_10.</span>
+        </div>
+    </div>
+
+    <div class="sectionTextAndImageRight">
+        <div class="sectionTextAndImageText sectionTextOneThird">
+            <h4>Settings became a visual prompt</h4>
+            <span>I designed two scenarios: generation based on SkillsTrack data, the internal skill assessment system, and a free-form scenario where the employee defines the direction. The plan can then be tuned with preferences, difficulty, learning formats, and a focus on hard or soft skills.</span>
+            <span>The same multi-step pipeline works here; only part of the cascade changes.</span>
+            <span>I avoided one large text field so the model would not receive unnecessary context. Instead, I used clear controls in the interface. They show users what can be configured and pass precise parameters to the agent.</span>
+        </div>
+        <div class="sectionTextAndImageImg">
+            <img src="projects/ai-idp/modal.png" alt="AI Development Plan settings modal">
+        </div>
+    </div>
+
+    <div class="sectionText sectionTextAdditional">
+        <span>After launch, the free-form branch was noticeably more popular. The working materials show an approximate ratio of about 180 added plans without SkillsTrack versus about 20 with SkillsTrack.</span>
+    </div>
+
+    <div class="sectionText">
+        <h4>Generation quality was controlled manually</h4>
+        <span>During the pilot, generation was not fully stable yet: the model could suggest weak wording, make mistakes, or return a result that needed adaptation to the real work context.</span>
+        <span>I controlled quality manually: tested prompts across different scenarios, reviewed generation examples, and gradually refined the input format and response structure. The interface included loading and error states, plus a warning that the plan should be checked before use.</span>
+    </div>
+
+    <div class="sectionTextAndImageRight">
+        <div class="sectionTextAndImageText sectionTextTwoThird">
+            <h4>Results and insights</h4>
+            <span>Development took two sprints. Designing and testing the AI logic started earlier and required more time. By July 2025, the AI plan was already working.</span>
+            <span>The main insight: the free-form scenario was more useful than automated skill analysis. People needed a structure for their own thoughts more than a formal way to close a skill gap.</span>
+            <h4 class="aiIdpSectionGap">IDP coverage increased</h4>
+            <span>The funnel: more than 1,000 users opened the scenario, about 40% tried to generate goals, and around 20% of them added the result to their plan.</span>
+            <span>Development plan coverage grew to 42.82% in 2026, compared with 31.34% the year before. The AI plan supported this growth by lowering the entry threshold and giving employees a ready structure.</span>
+            <span>Other projects also affected the metric: the IDP redesign itself and meetups. The AI plan supported coverage growth and attracted an audience, but its exact contribution to the total number still needs to be measured.</span>
+        </div>
+        <div class="sectionTextAndImageImg">
+            <img src="projects/ai-idp/metrics.png" alt="AI Development Plan metrics">
+        </div>
+    </div>
+
+    <div class="sectionTextAndImageRight">
+        <div class="sectionTextAndImageImg">
+            <img src="projects/ai-idp/photo.png" alt="Talk about the AI Development Plan">
+        </div>
+        <div class="sectionTextAndImageText sectionText50">
+            <h4>Talks and awards</h4>
+            <span>I presented the AI Development Plan at several internal conferences, showing how the product scenario, generative pipeline, and system prompts came together in one service.</span>
+            <span>In 2026, the project won first place at the IT HR Awards in the <a href="https://ithrawards.ru/winners">Technology Company for Employees</a> category.</span>
+        </div>
+    </div>
+</div>

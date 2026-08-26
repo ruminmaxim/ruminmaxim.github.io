@@ -1,0 +1,15 @@
+---
+layout: layouts/base.njk
+pageType: case
+bodyClass: bodyProject
+---
+{% set copy = site.locales[lang] %}
+<a href="{{ backHref }}" class="backLink" aria-label="{{ copy.close }}">
+    <div class="closeButton"></div>
+</a>
+<div class="aboutProject">
+    {{ content | safe }}
+    {% set showContact = true %}
+    {% include "components/footer.njk" %}
+</div>
+{% include "components/contacts-modal.njk" %}

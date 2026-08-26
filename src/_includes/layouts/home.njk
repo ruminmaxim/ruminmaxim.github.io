@@ -1,0 +1,16 @@
+---
+layout: layouts/base.njk
+pageType: home
+bodyClass: bodyIndex
+bodyId: aboutme
+---
+{% set copy = site.locales[lang] %}
+{% include "components/mobile-navigation.njk" %}
+{% include "components/desktop-navigation.njk" %}
+<main>
+    {{ content | safe }}
+    {% set showContact = false %}
+    {% include "components/footer.njk" %}
+</main>
+<div class="menuOpposite"></div>
+{% include "components/contacts-modal.njk" %}

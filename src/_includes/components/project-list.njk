@@ -1,0 +1,25 @@
+<div class="caseContainer" id="portfolio">
+    <b>{% if lang == "ru" %}Портфолио{% else %}Portfolio{% endif %}</b>
+    {% set featuredProjects = projects.featured %}
+    {% if lang == "ru" %}
+        {% set featuredProjects = projects.featuredRu %}
+    {% endif %}
+    {% for row in featuredProjects | batch(2) %}
+    <div class="caseContainerRow">
+        {% for project in row %}
+        <a class="caseItem" href="{{ project.url[lang] }}">
+            <div class="caseItemImage" style="background-image: url('{{ project.cover }}');" id="{{ project.id }}"></div>
+            <div class="caseItemDescription">
+                <small>{{ project.meta[lang] }}</small>
+                <h5>{{ project.title[lang] | safe }}</h5>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
+    {% endfor %}
+    <div class="caseContainerRow">
+        <a class="caseMoreOnBehance" href="https://www.behance.net/ruminmaxim" target="_blank" rel="noopener noreferrer">
+            <h5>{% if lang == "ru" %}Больше старых проектов на&nbsp;Behance{% else %}More old projects on Behance{% endif %}</h5>
+        </a>
+    </div>
+</div>

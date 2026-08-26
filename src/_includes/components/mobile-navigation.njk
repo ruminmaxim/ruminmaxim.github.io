@@ -1,0 +1,34 @@
+<div class="mobileMenu">
+    <div class="mobileMenuButtonContainer">
+        <button type="button" class="solidButton" data-open-contacts>{{ copy.contact }}</button>
+    </div>
+    <button type="button" class="menuIconContainer" aria-label="Menu" aria-expanded="false">
+        <span id="menuicon">
+            <span class="bar bar1"></span>
+            <span class="bar bar2"></span>
+            <span class="bar bar3"></span>
+        </span>
+    </button>
+    <div class="mobileMenuDrop">
+        <ul class="menuUl">
+            <li class="menuUlItem"><a data-close-menu href="#aboutme">{{ copy.about | safe }}</a></li>
+            <li class="menuUlItem"><a data-close-menu href="#portfolio">{{ copy.portfolioNav }}</a></li>
+            <li class="menuUlItem"><a data-close-menu href="#experience">{{ copy.experience }}</a></li>
+            <li class="menuUlItem"><a href="{{ copy.cv }}" download>{{ copy.download }}</a></li>
+        </ul>
+        <ul class="menuUl">
+            <li class="menuUlItem">
+                <a href="mailto:{{ site.email }}"><div class="menuUlItemContact"><div class="menuUlItemIcon email"></div><span>{{ site.email }}</span></div></a>
+            </li>
+            <li class="menuUlItem">
+                <a href="{{ site.telegram }}" target="_blank" rel="noopener noreferrer"><div class="menuUlItemContact"><div class="menuUlItemIcon telegram"></div><span>Telegram</span></div></a>
+            </li>
+            <li class="menuUlItem">
+                <a href="{{ site.linkedin }}" target="_blank" rel="noopener noreferrer"><div class="menuUlItemContact"><div class="menuUlItemIcon linkedin"></div><span>LinkedIn</span></div></a>
+            </li>
+        </ul>
+        <ul class="menuUl">
+            <li class="menuUlItem"><a href="{{ copy.languageUrl }}">{{ copy.languageLabel }}</a></li>
+        </ul>
+    </div>
+</div>

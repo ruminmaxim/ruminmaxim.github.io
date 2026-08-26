@@ -1,0 +1,20 @@
+<div class="menu">
+    <div class="menuSticky">
+        <div class="menuList">
+            <a href="#aboutme">{{ copy.about | safe }}</a>
+            <a href="#portfolio">{{ copy.portfolioNav }}</a>
+            <a href="#experience">{{ copy.experience }}</a>
+        </div>
+        <div class="menuList">
+            <button type="button" class="solidButton" data-open-contacts>{{ copy.contact }}</button>
+            <a href="{{ copy.cv }}" download><div class="ghostButton">{{ copy.download }}</div></a>
+        </div>
+        <div class="menuLang">
+            {% if lang == "en" %}
+            <a href="#" aria-current="page">en</a><span>/</span><a href="ru.html">ru</a>
+            {% else %}
+            <a href="index.html">en</a><span>/</span><a href="#" aria-current="page">ru</a>
+            {% endif %}
+        </div>
+    </div>
+</div>

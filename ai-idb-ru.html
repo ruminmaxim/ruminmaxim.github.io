@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI-план развития</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/case.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <link rel="stylesheet" href="assets/css/icons.css">
+</head>
+<body class="bodyProject">
+    
+<a href="ru.html" class="backLink" aria-label="Закрыть">
+    <div class="closeButton"></div>
+</a>
+<div class="aboutProject">
+    <div class="aboutProjectSection1024">
+    <h1>AI-план развития</h1>
+    <div class="sectionText">
+        <span class="aiIdpSubtitle">Как я спроектировал ИИ-сценарий, который превращает данные о&nbsp;навыках или пожелания сотрудника в&nbsp;индивидуальный план развития по&nbsp;модели 70–20–10.</span>
+    </div>
+    <div class="aiIdpSummary">
+        <div class="aiIdpSummaryItem">
+            <h5>Проблема</h5>
+            <span>Раньше сотруднику приходилось самому искать свои точки роста, формулировать цели и&nbsp;делить задачи по&nbsp;правилу 70–20–10. Это было сложно и&nbsp;занимало много времени.</span>
+        </div>
+        <div class="aiIdpSummaryItem">
+            <h5>Задача</h5>
+            <span>Нужно было добавить генерацию целей в&nbsp;уже готовый сервис ИПР, не&nbsp;меняя то, как планы хранятся и&nbsp;редактируются.</span>
+        </div>
+        <div class="aiIdpSummaryItem">
+            <h5>Моя роль</h5>
+            <span>Я сформулировал продуктовую гипотезу, спроектировал сценарий, пайплайн нейросети, системные промпты и&nbsp;интерфейс. Вел проект до&nbsp;самого запуска.</span>
+        </div>
+        <div class="aiIdpSummaryItem">
+            <h5>Результат</h5>
+            <span>Запустили функцию в&nbsp;пилотном режиме. Более 1 000 сотрудников открыли сценарий с&nbsp;нейросетью, более 200 из&nbsp;них добавили сгенерированные цели в&nbsp;свой план.</span>
+        </div>
+    </div>
+</div>
+<img src="projects/ai-idp/ai-idb.png" class="projectImage" alt="Заглушка обложки AI-плана развития">
+<div class="aboutProjectSection1024">
+    <div class="sectionText">
+        <h4>ИПР был сложен не&nbsp;формой, а&nbsp;смысловой работой</h4>
+        <span>Индивидуальный план развития уже существовал в&nbsp;организации как корпоративный сервис. Сотрудник мог создать цели, добавить подзадачи, отмечать прогресс и&nbsp;связывать развитие с&nbsp;конкретными навыками.</span>
+        <span>Но&nbsp;проблема была не&nbsp;в&nbsp;количестве полей или сложности интерфейса. Чтобы создать осмысленный план, сотруднику нужно было самому разобраться, чего ему не&nbsp;хватает, выбрать приоритет, превратить его в&nbsp;цель, придумать подходящие действия и&nbsp;распределить их по&nbsp;логике 70–20–10.</span>
+        <span>Я сформулировал эту проблему как высокую когнитивную нагрузку и&nbsp;связал её с&nbsp;coverage: чем больше самостоятельной смысловой работы требует создание плана, тем выше вероятность, что сотрудник заполнит его формально или не&nbsp;создаст вовсе.</span>
+    </div>
+
+    <div class="sectionText sectionTextAdditionalYellow">
+        <span>Кейс гибридный: это продуктовая работа, UX-сценарий и&nbsp;AI solution design.</span>
+        <span>AI здесь использовался как способ снизить порог создания ИПР.</span>
+    </div>
+
+    <div class="sectionTextAndImageRight">
+        <div class="sectionTextAndImageText sectionTextOneThird">
+            <h4>Первое решение: не&nbsp;перестраивать существующий ИПР</h4>
+            <span>Я решил не&nbsp;создавать продукт с&nbsp;нуля, а&nbsp;пойти более простым и&nbsp;надежным путем — генерировать черновик для&nbsp;уже существующего ИПР.</span>
+            <span>Нейросеть берет на&nbsp;себя самую сложную часть: формулирует цели, пишет описания и&nbsp;подбирает задачи. Как только сотрудник сохраняет результат, черновик становится обычным планом развития, который можно редактировать вручную.</span>
+            <span>Такой подход снизил риски и&nbsp;стоимость разработки: бэкенд банка работает как раньше, а&nbsp;ИИ отвечает только за&nbsp;самый первый и&nbsp;самый сложный шаг.</span>
+        </div>
+        <div class="sectionTextAndImageImg">
+            <img src="projects/ai-idp/idb.png" alt="Заглушка результата AI-плана">
+        </div>
+    </div>
+
+    <div class="sectionTextAndImageLeft">
+        <div class="sectionTextAndImageImg">
+            <img src="projects/ai-idp/pipeline.png" alt="Заглушка схемы AI-pipeline">
+        </div>
+        <div class="sectionTextAndImageText sectionTextOneThird">
+            <h4>Второе решение: разделить генерацию</h4>
+            <span>Сначала я хотел отправлять нейросети один запрос, но&nbsp;таким процессом сложно управлять. Поэтому я разделил задачу между двумя ИИ-агентами. Первый работает как карьерный ассистент: он анализирует навыки и&nbsp;предлагает фокусы для&nbsp;роста.</span>
+            <span>Затем связующий слой (glue layer) объединяет эти фокусы с&nbsp;настройками пользователя. После этого в&nbsp;дело вступает второй агент — он собирает итоговый план по&nbsp;модели 70–20–10.</span>
+            <span>Чтобы текст автоматически попадал в&nbsp;нужные поля, я задал для&nbsp;второго агента строгий формат ответа: title, description, group_70, group_20 и&nbsp;group_10.</span>
+        </div>
+    </div>
+
+    <div class="sectionTextAndImageRight">
+        <div class="sectionTextAndImageText sectionTextOneThird">
+            <h4>Настройки стали визуализацией промпта</h4>
+            <span>Я предусмотрел два сценария: генерацию по&nbsp;данным SkillsTrack (система оценки навыков) и&nbsp;свободный сценарий, где направление задает сам сотрудник. Дальше план можно настроить под&nbsp;себя: указать пожелания, сложность, удобные форматы обучения, выбрать фокус на&nbsp;хард- или софт-скилы.</span>
+            <span>Здесь так же работает многошаговый пайплайн: каскад меняется лишь частично.</span>
+            <span>Я не&nbsp;стал делать одно большое текстовое поле, чтобы нейросеть не&nbsp;получала лишний контекст. Вместо этого я сделал понятные контролы в&nbsp;интерфейсе. Они подсказывают пользователю, что можно настроить, и&nbsp;передают агенту четкие параметры.</span>
+        </div>
+        <div class="sectionTextAndImageImg">
+            <img src="projects/ai-idp/modal.png" alt="Заглушка модального окна AI-плана">
+        </div>
+    </div>
+
+    <div class="sectionText sectionTextAdditional">
+        <span>После запуска свободная ветка оказалась заметно популярнее. В&nbsp;материалах фигурирует ориентировочное соотношение около 180 добавленных планов без&nbsp;SkillsTrack против около 20 со&nbsp;SkillsTrack.</span>
+    </div>
+
+    <div class="sectionText">
+        <h4>Качество генерации контролировалось вручную</h4>
+        <span>На&nbsp;пилотном этапе генерация ещё не&nbsp;была полностью стабильной: модель могла предложить неудачные формулировки, ошибиться или выдать результат, который требовал адаптации под&nbsp;реальный рабочий контекст.</span>
+        <span>Поэтому качество я контролировал вручную: тестировал промпты на&nbsp;разных сценариях, разбирал примеры генераций и&nbsp;постепенно уточнял формат входных данных и&nbsp;структуру ответа. В&nbsp;интерфейсе при&nbsp;этом были предусмотрены состояния загрузки и&nbsp;ошибки, а&nbsp;также предупреждение о&nbsp;необходимости проверить план перед использованием.</span>
+    </div>
+
+    <div class="sectionTextAndImageRight">
+        <div class="sectionTextAndImageText sectionTextTwoThird">
+            <h4>Результаты и&nbsp;инсайты</h4>
+            <span>Разработка заняла два спринта. Проектирование и&nbsp;тесты ИИ-логики начались раньше и&nbsp;потребовали больше времени. К&nbsp;июлю 2025 года ИИ-план уже работал.</span>
+            <span>Главный инсайт: свободный сценарий оказался нужнее автоматического анализа навыков. Людям важнее получить структуру для&nbsp;своих мыслей, чем просто закрыть формальный дефицит навыков.</span>
+            <h4 class="aiIdpSectionGap">Покрытие ИПР выросло</h4>
+            <span>Воронка: более 1 000 пользователей открыли сценарий, около 40% попробовали сгенерировать цели, и&nbsp;примерно 20% из&nbsp;них добавили результат в&nbsp;свой план.</span>
+            <span>Покрытие планами развития выросло: 42,82% в&nbsp;2026 году против 31,34% в&nbsp;прошлом. AI-план помог этому росту: снизил порог входа и&nbsp;дал сотрудникам готовую структуру.</span>
+            <span>Но&nbsp;на&nbsp;метрику влияли и&nbsp;другие проекты: редизайн самого ИПР и&nbsp;митапы. ИИ-план поддержал рост покрытия и&nbsp;привлек аудиторию, но&nbsp;его точный вклад в&nbsp;общую цифру еще предстоит измерить.</span>
+        </div>
+        <div class="sectionTextAndImageImg">
+            <img src="projects/ai-idp/metrics.png" alt="Заглушка метрик AI-плана">
+        </div>
+    </div>
+
+    <div class="sectionTextAndImageRight">
+        <div class="sectionTextAndImageImg">
+            <img src="projects/ai-idp/photo.png" alt="Фото с&nbsp;доклада об&nbsp;AI-плане развития">
+        </div>
+        <div class="sectionTextAndImageText sectionText50">
+            <h4>Доклад и&nbsp;награды</h4>
+            <span>О&nbsp;проекте AI-плана развития я рассказал на&nbsp;нескольких внутренних конференциях — показал, как продуктовый сценарий, генеративный пайплайн и&nbsp;системные промпты соединились в&nbsp;одном сервисе.</span>
+            <span>В&nbsp;2026 году проект занял первое место на&nbsp;IT HR Awards в&nbsp;номинации <a href="https://ithrawards.ru/winners">«Технологичная компания для&nbsp;сотрудников»</a>.</span>
+        </div>
+    </div>
+</div>
+
+    
+    <div class="footerMain">
+    <span>Портфолио Рюмина Максима</span>
+    
+    <button type="button" class="solidButton" data-open-contacts>связаться</button>
+    
+    <div class="footerMainBG"></div>
+</div>
+
+</div>
+<div id="overlay" class="overlay">
+    <a class="modalCloseArea" href="#close" aria-label="Закрыть"></a>
+    <div class="popup">
+        <div class="contactsModalCont">
+            <a class="contactsModalItem" href="mailto:ruminmaxim@gmail.com">
+                <div class="contactsModalIcon email"></div>
+                <span>Написать email</span>
+            </a>
+            <a class="contactsModalItem" href="https://t.me/codexplorer" target="_blank" rel="noopener noreferrer">
+                <div class="contactsModalIcon telegram"></div>
+                <span>Написать в&nbsp;Telegram</span>
+            </a>
+            <a class="contactsModalItem" href="https://www.linkedin.com/in/ruminmaxim/" target="_blank" rel="noopener noreferrer">
+                <div class="contactsModalIcon linkedin"></div>
+                <span>Профиль на&nbsp;LinkedIn</span>
+            </a>
+        </div>
+        <a class="contactsModalCloseCont" href="#close" aria-label="Закрыть">
+            <div class="contactsModalClose"></div>
+        </a>
+    </div>
+</div>
+
+
+    
+    <script src="assets/js/site.js"></script>
+</body>
+</html>

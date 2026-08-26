@@ -1,0 +1,63 @@
+---
+layout: layouts/case.njk
+title: "Surveys and&nbsp;testing"
+lang: en
+permalink: testing-eng.html
+backHref: "index.html"
+---
+<div class="aboutProjectSection1024 testingCase">
+    <div class="sectionText testingIntro">
+        <h1>Surveys and&nbsp;testing</h1>
+        <span class="testingSubtitle">Two similar scenarios with different logic</span>
+    </div>
+
+    <div class="sectionText testingLead">
+        <span>The LMS needed two services: surveys for collecting feedback and tests for checking knowledge.</span>
+        <span>In both cases, an administrator builds a set of questions and sends a link to employees.</span>
+    </div>
+</div>
+
+<img src="projects/testing/Testing-base.png" class="projectImage testingFullImage" alt="Shared foundation for surveys and tests">
+
+<div class="aboutProjectSection1024 testingCase">
+    <div class="sectionText testingLead">
+        <span>Behind the similar scenarios, however, the logic was different: a survey saves a user&rsquo;s opinion, while a test needs correct answers, scoring, attempts, and result calculation. The interface had to preserve a shared foundation without flattening the product logic.</span>
+    </div>
+</div>
+
+<img src="projects/testing/Testing-progress.png" class="projectImage testingFullImage" alt="Survey and test completion progress">
+
+<div class="aboutProjectSection1024 testingCase testingCaseBody">
+    <div class="testingSplit testingSplitRight">
+        <div class="sectionText testingTextColumn">
+            <h4>We decomposed a complex model into entities</h4>
+            <span>The services are built on a two-level architecture. First, an administrator creates a template: adds questions, chooses their types, and defines the order. Then several surveys or tests can be launched from that template for different audiences and scenarios. Each launch has its own settings and unique link. This makes content reusable and allows launches to be created automatically through an API.</span>
+            <span>I designed the interface for this model: separated the entities, defined the card structure, and connected them into a coherent workflow.</span>
+        </div>
+        <div class="testingImagePanel testingModelImage">
+            <img src="projects/testing/Testing-model.png" alt="Entity model for surveys and tests">
+        </div>
+    </div>
+
+    <div class="testingSplit testingSplitLeft">
+        <div class="testingImagePanel">
+            <img src="projects/testing/Testing-fork.png" alt="Testing service forked from surveys">
+        </div>
+        <div class="sectionText testingTextColumn testingTextColumnRight">
+            <h4>Testing was built on top of surveys</h4>
+            <span>When the testing service was needed, the team could use surveys as the technical and interface foundation: developers forked the back end and front end.</span>
+            <span>The independent cards, question types, and settings already built into the design did not have to be created again. They were extended with correct answers, question blocks, passing score, attempts, and a timer. The new service gained its own logic while keeping a familiar structure.</span>
+        </div>
+    </div>
+
+    <div class="testingSplit testingSplitLeft testingFinalBlock">
+        <div class="testingImagePanel testingSmallImage">
+            <img src="projects/testing/Testing-another-services.png" alt="Survey platform used in other services">
+        </div>
+        <div class="sectionText testingWideText">
+            <h4>A shared platform for banking scenarios</h4>
+            <span>As a result, two independent services appeared on top of a shared product model. Administrators create templates, manage launches, and export answers, while employees complete surveys and tests in a simple linear interface.</span>
+            <span>The services can also be managed through an API. Both were embedded into other products: for example, the Employee Engagement service uses the Surveys mechanism for feedback collection, while Testing was integrated into LMS learning courses.</span>
+        </div>
+    </div>
+</div>

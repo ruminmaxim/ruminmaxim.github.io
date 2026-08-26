@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Playbook for&nbsp;product design</title>
+    <link rel="stylesheet" href="assets/css/base.css">
+    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="assets/css/case.css">
+    <link rel="stylesheet" href="assets/css/responsive.css">
+    
+    <link rel="stylesheet" href="assets/css/icons.css">
+</head>
+<body class="bodyProject">
+    
+<a href="index.html" class="backLink" aria-label="Close">
+    <div class="closeButton"></div>
+</a>
+<div class="aboutProject">
+    <div class="aboutProjectSection1024">
+    <h1>AI Playbook for&nbsp;product design</h1>
+    <div class="sectionText">
+        <span class="aiRepoSubtitle">A repository for AI prototyping of product scenarios with design system components.</span>
+    </div>
+    <div class="aiIdpSummary">
+        <div class="aiIdpSummaryItem">
+            <h5>My role</h5>
+            <span>I designed the Playbook concept and architecture: the flow model, screen and specification structure, agent rules, change boundaries, and the working prototype itself.</span>
+        </div>
+        <div class="aiIdpSummaryItem">
+            <h5>Format</h5>
+            <span>A React repository with a predefined project structure, AI agent rules, and a design system connected through MCP.</span>
+        </div>
+        <div class="aiIdpSummaryItem">
+            <h5>Facts</h5>
+            <span>React + TypeScript · design system via MCP · screen/spec model · working beta prototype in a few days.</span>
+        </div>
+        <div class="aiIdpSummaryItem">
+            <h5>Result</h5>
+            <span>Not a static mockup, but a working sequence of screens inside a repository that can be developed and edited further together with an AI agent.</span>
+        </div>
+    </div>
+</div>
+
+<img src="projects/ai-repo/playbook-overview.png" class="projectImage" alt="AI Playbook overview screen with callouts">
+
+<div class="aboutProjectSection1024">
+    <div class="sectionText">
+        <span>I wanted to test whether a code AI agent could be used not only for isolated interface changes, but for assembling an entire user scenario. For that, I designed a React repository where the project structure, design system, and agent rules are already defined.</span>
+        <span>The output is a working flow made of connected screens built with design system components. It lives in the repository and becomes a basis for further iterations with an AI agent. For precise interface edits and manual adjustments to individual elements, <a href="https://www.retune.dev/">Retune</a> is used, so the whole scenario does not have to be regenerated from scratch.</span>
+        <span>For me, this was more than an interface generation experiment. Playbook became a first step toward a more controllable AI-assisted discovery process, where an agent gradually receives task context, designs a scenario, and assembles a solution in a form that is still useful for further work. The result remains readable and editable for humans while also preserving the structure, specifications, and context needed for future AI-agent iterations. The same artifact can become a continuation point both for a product team and for agent-driven development.</span>
+    </div>
+
+    <div class="sectionText sectionTextAdditionalYellow">
+        <span>The core idea of Playbook is to give the agent a managed environment instead of an empty project: scenario structure, ready-made components, screen specifications, and clear change boundaries.</span>
+    </div>
+
+    <div class="sectionTextAndImageLeft">
+        <div class="sectionTextAndImageImg">
+            <img src="projects/ai-repo/repository-structure.png" alt="AI Playbook repository structure">
+        </div>
+        <div class="sectionTextAndImageText sectionText50">
+            <h4>The repository gives the agent an environment to work in</h4>
+            <span>Playbook separates the project into a stable foundation and the area where a specific product scenario evolves. Shell, navigation, and the flow engine stay part of the tool itself, while new interfaces are created inside separate flows.</span>
+            <span>The agent does not need to rediscover the whole project every time. The README captures the main rules and constraints, and separate skills were added for more modern code agents to explain how to work with different task types. This helps the agent understand context faster and change the right part of the scenario without touching the rest of the system.</span>
+        </div>
+    </div>
+
+    <div class="sectionTextAndImageRight">
+        <div class="sectionTextAndImageText sectionTextTwoThird">
+            <h4>Each screen stores both interface and intent</h4>
+            <span>I connected every screen with a specification: next to <b>screen.tsx</b> there is a <b>spec.ts</b> file describing the screen&rsquo;s purpose, logic, and states.</span>
+            <span>The specification is displayed directly inside Playbook and remains next to the implementation. On the next iteration, the agent sees not only the existing code, but also why the screen exists, what role it plays in the flow, and which states it needs to support.</span>
+            <span>This is especially important for a multi-step discovery process: the result of the previous step becomes context for the next one, and the meaning of the solution is not lost between iterations.</span>
+            <h4 class="aiIdpSectionGap">Constraints became part of the architecture</h4>
+            <span>By default, the agent works in limited mode: it can change the current flow, its screens, and specifications, but does not rebuild Playbook itself. Shell, the flow engine, and root settings remain stable unless the user explicitly asks for a structural change.</span>
+            <span>I captured these constraints not only in the agent rules, but also in the repository architecture: stable infrastructure is separated from the area where the agent can create and change a product scenario. This makes the agent&rsquo;s work more predictable and reduces the risk that a local task unexpectedly turns into a full application rewrite. For an automated process, this is essential: the agent&rsquo;s boundaries should be defined not only by instructions, but by the environment itself.</span>
+        </div>
+        <div class="sectionTextAndImageImg">
+            <img src="projects/ai-repo/screen-and-spec.png" alt="AI Playbook screen and specification">
+        </div>
+    </div>
+
+    <div class="sectionText">
+        <h4>A template became a prototype for an AI-native process</h4>
+        <span>I assembled the working beta in a few days and used it to generate multi-screen product scenarios with real design system components.</span>
+        <span>The experiment showed that simply giving the agent a component library is not enough. It needs a scenario model, context for every screen, and clear boundaries for changes.</span>
+        <span>In practice, Playbook is a starting point for a multi-step discovery process. One stage forms the scenario and interface, and the next receives that result as input and develops the solution further.</span>
+        <span>The next level of this idea is to connect such steps into a single multi-agent process that can support product creation end to end: from problem framing and scenario research in discovery to implementation and preparing the solution for delivery.</span>
+    </div>
+
+</div>
+
+<img src="projects/ai-repo/generated-flow.png" class="projectImage" alt="Agent request and generated flow">
+
+<div class="aboutProjectSection1024">
+    <div class="sectionText sectionTextAdditional">
+        <span>Examples of generated Playbook interfaces built with React design system components.</span>
+    </div>
+</div>
+
+    
+    <div class="footerMain">
+    <span>Rumin Maxim&#39;s portfolio</span>
+    
+    <button type="button" class="solidButton" data-open-contacts>contact me</button>
+    
+    <div class="footerMainBG"></div>
+</div>
+
+</div>
+<div id="overlay" class="overlay">
+    <a class="modalCloseArea" href="#close" aria-label="Close"></a>
+    <div class="popup">
+        <div class="contactsModalCont">
+            <a class="contactsModalItem" href="mailto:ruminmaxim@gmail.com">
+                <div class="contactsModalIcon email"></div>
+                <span>Write me an email</span>
+            </a>
+            <a class="contactsModalItem" href="https://t.me/codexplorer" target="_blank" rel="noopener noreferrer">
+                <div class="contactsModalIcon telegram"></div>
+                <span>Contact me on Telegram</span>
+            </a>
+            <a class="contactsModalItem" href="https://www.linkedin.com/in/ruminmaxim/" target="_blank" rel="noopener noreferrer">
+                <div class="contactsModalIcon linkedin"></div>
+                <span>Profile on LinkedIn</span>
+            </a>
+        </div>
+        <a class="contactsModalCloseCont" href="#close" aria-label="Close">
+            <div class="contactsModalClose"></div>
+        </a>
+    </div>
+</div>
+
+
+    
+    <script src="assets/js/site.js"></script>
+</body>
+</html>
