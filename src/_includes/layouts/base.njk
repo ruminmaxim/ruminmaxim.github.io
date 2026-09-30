@@ -3,7 +3,232 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{ title | safe }}</title>
+    {#- Keep page metadata inside head so the published build and root HTML stay in sync.
+       Locale pairs are explicit and verified against the page content and project links. #}
+    {% set metadataByPage = {
+        "index.html": {
+            "description": "Product designer with 12+ years of experience in complex B2B and SaaS products, user flows, design systems, and AI-powered corporate workflows.",
+            "image": "projects/ai-idp/ai-idb.png",
+            "imageAlt": "AI Development Plan setup and generated goals from Maxim Rumin’s product design portfolio",
+            "en": "",
+            "ru": "ru.html"
+        },
+        "ru.html": {
+            "description": "Продуктовый дизайнер с опытом более 12 лет. Проектирую сложные B2B- и SaaS-продукты, пользовательские сценарии и системы, встраиваю AI в корпоративные процессы.",
+            "image": "projects/ai-idp/ai-idb.png",
+            "imageAlt": "Настройки AI-плана развития и сгенерированные цели из портфолио Максима Рюмина",
+            "en": "",
+            "ru": "ru.html"
+        },
+        "ai-idb-eng.html": {
+            "description": "How I designed an AI scenario that turns skill data or an employee’s own request into an individual development plan based on the 70-20-10 model.",
+            "image": "projects/ai-idp/ai-idb.png",
+            "imageAlt": "AI Development Plan interface with skill-based settings and generated development goals",
+            "en": "ai-idb-eng.html",
+            "ru": "ai-idb-ru.html"
+        },
+        "ai-idb-ru.html": {
+            "description": "Как я спроектировал ИИ-сценарий, который превращает данные о навыках или пожелания сотрудника в индивидуальный план развития по модели 70–20–10.",
+            "image": "projects/ai-idp/ai-idb.png",
+            "imageAlt": "Интерфейс AI-плана развития с настройками по навыкам и сгенерированными целями",
+            "en": "ai-idb-eng.html",
+            "ru": "ai-idb-ru.html"
+        },
+        "ai-repo-eng.html": {
+            "description": "A repository for AI prototyping of product scenarios with design system components, agent rules, and a shared structure for screens and specifications.",
+            "image": "projects/ai-repo/playbook-overview.png",
+            "imageAlt": "AI Playbook prototype with callouts for the scenario screen, navigation, and specifications",
+            "en": "ai-repo-eng.html",
+            "ru": "ai-repo-ru.html"
+        },
+        "ai-repo-ru.html": {
+            "description": "Репозиторий для AI-прототипирования продуктовых сценариев на компонентах дизайн-системы: структура экранов и спецификаций, правила работы агента и рабочий прототип.",
+            "image": "projects/ai-repo/playbook-overview.png",
+            "imageAlt": "Прототип AI Playbook с выносками к экрану сценария, навигации и спецификациям",
+            "en": "ai-repo-eng.html",
+            "ru": "ai-repo-ru.html"
+        },
+        "antivirus-eng.html": {
+            "description": "Design of a desktop app combining antivirus scanning, registry cleanup, vulnerability checks, and startup management in a single interface.",
+            "image": "projects/antivirus/av%20Slice%201.png",
+            "imageAlt": "Antivirus App UI kit showing buttons, form fields, toggles, and their interaction states",
+            "en": "antivirus-eng.html",
+            "ru": "antivirus-ru.html"
+        },
+        "antivirus-ru.html": {
+            "description": "Дизайн комплексного приложения, объединяющего антивирус, чистку реестра, проверку уязвимостей и управление автозагрузкой в едином интерфейсе.",
+            "image": "projects/antivirus/av%20Slice%201.png",
+            "imageAlt": "UI-кит Antivirus App: кнопки, поля ввода, переключатели и их состояния",
+            "en": "antivirus-eng.html",
+            "ru": "antivirus-ru.html"
+        },
+        "anw-ds-rework-eng.html": {
+            "description": "Redesigning a platform and its design system while preserving page structure and user flows, simplifying the Figma library and updating components and tokens.",
+            "image": "projects/anw/system/cover.png",
+            "imageAlt": "Redesigned jobs platform homepage alongside the Library 3.0 design library",
+            "en": "anw-ds-rework-eng.html",
+            "ru": "anw-ds-rework-ru.html"
+        },
+        "anw-ds-rework-ru.html": {
+            "description": "Редизайн платформы и дизайн-системы с сохранением структуры страниц и пользовательских сценариев: упрощение библиотеки Figma, обновление компонентов и токенов.",
+            "image": "projects/anw/system/cover.png",
+            "imageAlt": "Обновлённая главная страница платформы вакансий и дизайн-библиотека Library 3.0",
+            "en": "anw-ds-rework-eng.html",
+            "ru": "anw-ds-rework-ru.html"
+        },
+        "anw-ux-research-eng.html": {
+            "description": "Testing the key user flow after a rebrand, checking usability on desktop and mobile, and gathering feedback on the platform’s new visual style.",
+            "image": "projects/anw/research/prototypes.png",
+            "imageAlt": "Connected desktop and mobile prototypes of the job search flow used in the rebrand research",
+            "en": "anw-ux-research-eng.html",
+            "ru": "anw-ux-research-ru.html"
+        },
+        "anw-ux-research-ru.html": {
+            "description": "Исследование ключевого пользовательского сценария после ребрендинга: проверка удобства десктопной и мобильной версий, сбор отзывов о новом визуальном стиле.",
+            "image": "projects/anw/research/prototypes.png",
+            "imageAlt": "Связанные прототипы десктопного и мобильного сценариев поиска работы для исследования ребрендинга",
+            "en": "anw-ux-research-eng.html",
+            "ru": "anw-ux-research-ru.html"
+        },
+        "gorod-library-eng.html": {
+            "description": "Creating a new design library for City.Online: reusable components, design tokens, guidelines, and a review process to support the portal redesign.",
+            "image": "projects/gorod/ds/cover.png",
+            "imageAlt": "City portal design library with text styles, content labels, toggles, and component guidelines",
+            "en": "gorod-library-eng.html",
+            "ru": "gorod-library-ru.html"
+        },
+        "gorod-library-ru.html": {
+            "description": "Создание новой дизайн-библиотеки для городского онлайн-портала: переиспользуемые компоненты, дизайн-токены, гайдлайны и процесс проверки качества компонентов.",
+            "image": "projects/gorod/ds/cover.png",
+            "imageAlt": "Дизайн-библиотека городского портала: текстовые стили, метки контента, переключатели и гайдлайны компонентов",
+            "en": "gorod-library-eng.html",
+            "ru": "gorod-library-ru.html"
+        },
+        "gorod-main-eng.html": {
+            "description": "Redesigning a city portal that brings online services to northern communities, from telemedicine to education, with a focus on homepage engagement.",
+            "image": "projects/gorod/main/cover.png",
+            "imageAlt": "City portal homepage with Norilsk weather and cards for health, education, career, and city services",
+            "en": "gorod-main-eng.html",
+            "ru": "gorod-main-ru.html"
+        },
+        "gorod-main-ru.html": {
+            "description": "Редизайн городского портала с онлайн-сервисами для жителей северных городов — от телемедицины до образования. Цель проекта — повысить вовлечённость на главной странице.",
+            "image": "projects/gorod/main/cover.png",
+            "imageAlt": "Главная страница городского портала с погодой в Норильске и карточками здоровья, образования, карьеры и городских сервисов",
+            "en": "gorod-main-eng.html",
+            "ru": "gorod-main-ru.html"
+        },
+        "macbattery-eng.html": {
+            "description": "Design of a utility for checking battery and power usage on Apple laptops, offered both as a standalone app and in a bundle with another company product.",
+            "image": "projects/macbattery/macbattery%20Slice%201.png",
+            "imageAlt": "MacBattery screens with charge levels, remaining battery time, battery health, and interface components",
+            "en": "macbattery-eng.html",
+            "ru": "macbattery-ru.html"
+        },
+        "macbattery-ru.html": {
+            "description": "Дизайн утилиты для работы с батареей и проверки энергопотребления ноутбуков Apple. Приложение можно было купить отдельно или в комплекте с другой программой компании.",
+            "image": "projects/macbattery/macbattery%20Slice%201.png",
+            "imageAlt": "Экраны MacBattery с уровнем заряда, оставшимся временем работы, состоянием батареи и компонентами интерфейса",
+            "en": "macbattery-eng.html",
+            "ru": "macbattery-ru.html"
+        },
+        "pushkin-eng.html": {
+            "description": "A studio website launched in 2016, with a neutral interface, carefully prepared imagery, and a design that worked for almost six years without major changes.",
+            "image": "projects/pushkin/1.png",
+            "imageAlt": "Pushkin studio homepage with colorful parallax sections and photographic compositions",
+            "en": "pushkin-eng.html",
+            "ru": "pushkin-ru.html"
+        },
+        "pushkin-ru.html": {
+            "description": "Сайт студии Pushkin, запущенный в 2016 году: нейтральный UI, продуманный UX и качественная графика позволили дизайну проработать почти шесть лет без серьёзных изменений.",
+            "image": "projects/pushkin/1.png",
+            "imageAlt": "Главная страница студии Pushkin с цветными параллакс-секциями и фотографическими композициями",
+            "en": "pushkin-eng.html",
+            "ru": "pushkin-ru.html"
+        },
+        "testing-eng.html": {
+            "description": "Designing two LMS services: surveys for employee feedback and tests for knowledge checks, with a shared interface foundation and distinct product logic.",
+            "image": "projects/testing/Testing-base.png",
+            "imageAlt": "Survey and test start screens showing a feedback questionnaire and a timed knowledge check",
+            "en": "testing-eng.html",
+            "ru": "testing-ru.html"
+        },
+        "testing-ru.html": {
+            "description": "Проектирование двух сервисов для LMS: опросов для сбора обратной связи и тестирований для проверки знаний, с общей основой интерфейса и разной продуктовой логикой.",
+            "image": "projects/testing/Testing-base.png",
+            "imageAlt": "Стартовые экраны опроса для сбора обратной связи и тестирования знаний с ограничением времени",
+            "en": "testing-eng.html",
+            "ru": "testing-ru.html"
+        },
+        "usl-eng.html": {
+            "description": "A mid-fidelity prototype of a template application with broad marketing functionality, from creating a loyalty system to launching an online store.",
+            "image": "projects/usl/Image1.png",
+            "imageAlt": "Loyalty app prototype with a sign-in screen, loyalty cards, discounts, and bonus balances",
+            "en": "usl-eng.html",
+            "ru": "usl-ru.html"
+        },
+        "usl-ru.html": {
+            "description": "Прототип приложения-шаблона средней детализации с комплексным маркетинговым функционалом: от создания системы лояльности до запуска интернет-магазина.",
+            "image": "projects/usl/Image1.png",
+            "imageAlt": "Прототип приложения лояльности: экран входа, карты, скидки и баланс бонусов",
+            "en": "usl-eng.html",
+            "ru": "usl-ru.html"
+        },
+        "vpnapp-eng.html": {
+            "description": "Designing a VPN client and its accompanying website, from user surveys and competitor research to the main connection screen, visual style, and animation.",
+            "image": "projects/vpnapp/part1.png",
+            "imageAlt": "VPN client screens showing connection states, server selection, and connection speed",
+            "en": "vpnapp-eng.html",
+            "ru": "vpnapp-ru.html"
+        },
+        "vpnapp-ru.html": {
+            "description": "Дизайн VPN-клиента и сопутствующего сайта: опрос пользователей, анализ конкурентов, разработка главного экрана подключения, визуального стиля и анимации.",
+            "image": "projects/vpnapp/part1.png",
+            "imageAlt": "Экраны VPN-клиента с состояниями подключения, выбором сервера и скоростью соединения",
+            "en": "vpnapp-eng.html",
+            "ru": "vpnapp-ru.html"
+        },
+        "vpnwatch-eng.html": {
+            "description": "An independent VPN ratings and reviews service, developed from an MVP into a website with comparisons, infographics, and useful mini-services.",
+            "image": "projects/vpnwatch/part1.png",
+            "imageAlt": "VPNWatch visual identity, interface components, homepage, and VPN rating cards",
+            "en": "vpnwatch-eng.html",
+            "ru": "vpnwatch-ru.html"
+        },
+        "vpnwatch-ru.html": {
+            "description": "Независимый сервис рейтингов и обзоров VPN-приложений: запуск MVP, обновление дизайна, сравнение продуктов, инфографика и полезные мини-сервисы.",
+            "image": "projects/vpnwatch/part1.png",
+            "imageAlt": "Фирменный стиль VPNWatch, компоненты интерфейса, главная страница и карточки рейтинга VPN",
+            "en": "vpnwatch-eng.html",
+            "ru": "vpnwatch-ru.html"
+        }
+    } -%}
+    {% set metadata = metadataByPage[permalink] -%}
+    {% set metadataTitle = title | replace("&nbsp;", " ") -%}
+    {% set siteOrigin = "https://ruminmaxim.github.io/" -%}
+    {% set canonicalUrl = siteOrigin ~ ("" if permalink == "index.html" else permalink) -%}
+    <title>{{ metadataTitle }}</title>
+
+    <meta name="description" content="{{ metadata.description }}">
+    <link rel="canonical" href="{{ canonicalUrl }}">
+    <link rel="alternate" hreflang="en" href="{{ siteOrigin }}{{ metadata.en }}">
+    <link rel="alternate" hreflang="ru" href="{{ siteOrigin }}{{ metadata.ru }}">
+    <link rel="alternate" hreflang="x-default" href="{{ siteOrigin }}{{ metadata.en }}">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Maxim Rumin — Product Designer">
+    <meta property="og:title" content="{{ metadataTitle }}">
+    <meta property="og:description" content="{{ metadata.description }}">
+    <meta property="og:url" content="{{ canonicalUrl }}">
+    <meta property="og:image" content="{{ siteOrigin }}{{ metadata.image }}">
+    <meta property="og:image:alt" content="{{ metadata.imageAlt }}">
+    <meta property="og:locale" content="{{ 'ru_RU' if lang == 'ru' else 'en_US' }}">
+    <meta property="og:locale:alternate" content="{{ 'en_US' if lang == 'ru' else 'ru_RU' }}">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ metadataTitle }}">
+    <meta name="twitter:description" content="{{ metadata.description }}">
+    <meta name="twitter:image" content="{{ siteOrigin }}{{ metadata.image }}">
     <link rel="stylesheet" href="assets/css/base.css">
     <link rel="stylesheet" href="assets/css/home.css">
     <link rel="stylesheet" href="assets/css/case.css">
