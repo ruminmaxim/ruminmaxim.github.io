@@ -29,16 +29,37 @@ backHref: "index.html"
         </div>
     </div>
 </div>
+<section class="aiIdpBackground" aria-labelledby="aiIdpBackgroundTitle">
+    <div class="aiIdpBackgroundIntro">
+        <h4 id="aiIdpBackgroundTitle">A little about the Development Plan</h4>
+        <p>Before adding AI, I worked on redesigning the core individual development plan service. The IDP helps employees set goals, plan their development using the 70-20-10 model, track progress, and connect their tasks to professional skills. My goal was to make the plan clear and easy to use, from creating goals to managing tasks and tracking results.</p>
+        <img class="largeImageShadow" src="projects/ai-idp/ai-interface.png" alt="Individual Development Plan service interface">
+    </div>
+    <div class="aiIdpBackgroundDetails">
+        <div class="aiIdpBackgroundCopy">
+            <div class="aiIdpBackgroundStory">
+                <h4>A problem I knew well</h4>
+                <p>As a mentor to designers and a member of the professional community, I regularly heard complaints about the existing IDP. Employees usually put their plans together in one-on-one meetings with their managers, recorded goals and tasks in Confluence or other tools, and then tried to fit them into the bank&rsquo;s recommended 70-20-10 model.</p>
+                <p>Goals changed along the way; tasks were moved, added, and marked complete. I understood these workflows from talking directly with users. The need was clear: create one place for flexible plan editing, collaboration with a manager or mentor, and future integration with other HR services.</p>
+            </div>
+            <div class="aiIdpBackgroundStory">
+                <h4>A flexible editor instead of rigid forms</h4>
+                <p>Despite limited resources and the project&rsquo;s relatively low priority, we chose a Notion-like editor. It preserved the structure an IDP needs without restricting how people work. Users could freely edit text, drag goals and tasks, delete or duplicate items, mark them complete, and move structured content with copy and paste.</p>
+                <p>Thoughtful UI brought these features together in a clear, flexible interface. Users responded positively, and after the redesign both development plan coverage and the annual customer experience index (ICX) increased.</p>
+            </div>
+        </div>
+        <img src="projects/ai-idp/goal.png" alt="Goal and task editor in the Development Plan">
+    </div>
+</section>
+<section class="aiIdpTransition" aria-labelledby="aiIdpTransitionTitle">
+    <h4 id="aiIdpTransitionTitle">But a good interface was not enough</h4>
+    <p>Even with a clear interface, employees still had to identify their own growth areas, formulate goals, and come up with concrete actions to achieve them. The redesign made it easier to work with a plan, but it could not do that thinking for them.</p>
+    <p>I framed this as a cognitive load problem and connected it to coverage: the more independent thinking a plan requires, the more likely employees are to fill it in mechanically or avoid creating one altogether.</p>
+    <p>That led to a new hypothesis: what if we helped employees create the content of their plans, not just manage them? This is how the idea for the AI Development Plan emerged.</p>
+</section>
 <img src="projects/ai-idp/ai-idb.png" class="projectImage" alt="AI Development Plan cover">
 <div class="aboutProjectSection1024">
-    <div class="sectionText">
-        <h4>The hard part of IDP was not the form, but the thinking behind it</h4>
-        <span>The individual development plan already existed in the organization as a corporate service. Employees could create goals, add subtasks, track progress, and connect development with specific skills.</span>
-        <span>The problem was not the number of fields or interface complexity. To create a meaningful plan, an employee had to understand what they lacked, choose a priority, turn it into a goal, come up with relevant actions, and distribute them according to the 70-20-10 logic.</span>
-        <span>I framed this as a cognitive load problem and connected it with coverage: the more independent thinking the plan requires, the more likely employees are to fill it in formally or avoid creating it at all.</span>
-    </div>
-
-    <div class="sectionText sectionTextAdditionalYellow">
+    <div class="sectionText sectionTextAdditionalYellow aiIdpCallout">
         <span>This is a hybrid case: product work, UX scenario design, and AI solution design.</span>
         <span>AI was used here to lower the threshold for creating an IDP.</span>
     </div>
@@ -51,13 +72,13 @@ backHref: "index.html"
             <span>This approach reduced development risk and cost: the bank&rsquo;s back end continued to work as before, while AI handled only the first and hardest step.</span>
         </div>
         <div class="sectionTextAndImageImg">
-            <img src="projects/ai-idp/idb.png" alt="Generated AI Development Plan result">
+            <img class="aiIdpRoundedImage" src="projects/ai-idp/idb.png" alt="Generated AI Development Plan result">
         </div>
     </div>
 
     <div class="sectionTextAndImageLeft">
         <div class="sectionTextAndImageImg">
-            <img src="projects/ai-idp/pipeline.png" alt="AI pipeline diagram">
+            <img class="aiIdpRoundedImage" src="projects/ai-idp/pipeline.png" alt="AI pipeline diagram">
         </div>
         <div class="sectionTextAndImageText sectionTextOneThird">
             <h4>Second decision: split generation into steps</h4>
@@ -75,19 +96,25 @@ backHref: "index.html"
             <span>I avoided one large text field so the model would not receive unnecessary context. Instead, I used clear controls in the interface. They show users what can be configured and pass precise parameters to the agent.</span>
         </div>
         <div class="sectionTextAndImageImg">
-            <img src="projects/ai-idp/modal.png" alt="AI Development Plan settings modal">
+            <img class="aiIdpRoundedImage" src="projects/ai-idp/modal.png" alt="AI Development Plan settings modal">
         </div>
     </div>
 
-    <div class="sectionText sectionTextAdditional">
-        <span>After launch, the free-form branch was noticeably more popular. The working materials show an approximate ratio of about 180 added plans without SkillsTrack versus about 20 with SkillsTrack.</span>
+    <div class="sectionText sectionTextAdditionalYellow aiIdpCallout">
+        <span>After launch, the free-form path proved noticeably more popular.</span>
+        <span>Approximately 180 plans were added without SkillsTrack, compared with about 20 using SkillsTrack.</span>
     </div>
 
-    <div class="sectionText">
-        <h4>Generation quality was controlled manually</h4>
-        <span>During the pilot, generation was not fully stable yet: the model could suggest weak wording, make mistakes, or return a result that needed adaptation to the real work context.</span>
-        <span>I controlled quality manually: tested prompts across different scenarios, reviewed generation examples, and gradually refined the input format and response structure. The interface included loading and error states, plus a warning that the plan should be checked before use.</span>
+    <div class="aiIdpQuality">
+        <img class="aiIdpQualityImage aiIdpRoundedImage" src="projects/ai-idp/error.png" alt="Error message shown when goal generation fails">
+        <div class="sectionText">
+            <h4>I checked generation quality manually</h4>
+            <span>During the pilot, generation was not fully reliable: the model could suggest poor wording, make mistakes, or return a result that needed to be adapted to the real work context.</span>
+            <span>So I checked quality manually: I tested prompts across different scenarios, reviewed generated plans, and gradually refined the input format and response structure. The interface included loading and error states, as well as a warning to review the plan before using it.</span>
+        </div>
     </div>
+
+    <div class="sectionSeparator sectionSeparatorGray"></div>
 
     <div class="sectionTextAndImageRight">
         <div class="sectionTextAndImageText sectionTextTwoThird">
@@ -99,16 +126,25 @@ backHref: "index.html"
             <span>Development plan coverage grew to 42.82% in 2026, compared with 31.34% the year before. The AI plan supported this growth by lowering the entry threshold and giving employees a ready structure.</span>
             <span>Other projects also affected the metric: the IDP redesign itself and meetups. The AI plan supported coverage growth and attracted an audience, but its exact contribution to the total number still needs to be measured.</span>
         </div>
-        <div class="sectionTextAndImageImg">
-            <img src="projects/ai-idp/metrics.png" alt="AI Development Plan metrics">
+        <div class="aiIdpMetrics">
+            <div class="aiIdpMetricsItem">
+                <span class="aiIdpMetricsValue">200+</span>
+                <span>employees added a generated development plan</span>
+            </div>
+            <div class="aiIdpMetricsItem">
+                <span class="aiIdpMetricsValue">up 11%</span>
+                <span>development plan coverage</span>
+            </div>
         </div>
     </div>
 
-    <div class="sectionTextAndImageRight">
+    <div class="sectionSeparator sectionSeparatorGray"></div>
+
+    <div class="sectionTextAndImageRight aiIdpTalk">
         <div class="sectionTextAndImageImg">
-            <img src="projects/ai-idp/photo.png" alt="Talk about the AI Development Plan">
+            <img class="aiIdpRoundedImage" src="projects/ai-idp/photo.png" alt="Talk about the AI Development Plan">
         </div>
-        <div class="sectionTextAndImageText sectionText50">
+        <div class="sectionTextAndImageText">
             <h4>Talks and awards</h4>
             <span>I presented the AI Development Plan at several internal conferences, showing how the product scenario, generative pipeline, and system prompts came together in one service.</span>
             <span>In 2026, the project won first place at the IT HR Awards in the <a href="https://ithrawards.ru/winners">Technology Company for Employees</a> category.</span>
