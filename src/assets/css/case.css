@@ -380,11 +380,101 @@
 }
 
 .testingCase {
+    width: calc(100% - 64px);
     gap: 42px;
 }
 
 .testingIntro {
     margin-top: 20px;
+}
+
+.testingIntroImages {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    width: calc(100% - 64px);
+    max-width: 1288px;
+}
+
+.testingIntroImages img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.testingStory {
+    flex-direction: column;
+    gap: 64px;
+    margin-top: 48px;
+    width: calc(100% - 64px);
+    max-width: 1024px;
+}
+
+.testingStoryRow {
+    display: grid;
+    grid-template-columns: minmax(0, 320px) minmax(0, 668px);
+    gap: 36px;
+    align-items: start;
+}
+
+.testingStoryRow img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.testingCatalogSection {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 48px 32px;
+    background: #E6EEFA;
+}
+
+.testingCatalogContent {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.testingCatalogImage,
+.testingCatalogPublish img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.testingCatalogPublish {
+    display: grid;
+    grid-template-columns: minmax(0, 320px) minmax(0, 668px);
+    gap: 36px;
+    align-items: center;
+}
+
+.testingCourseSection {
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: -30px;
+    padding: 48px 32px;
+    background: #F8F8F8;
+}
+
+.testingCourseContent {
+    display: grid;
+    grid-template-columns: minmax(0, 668px) minmax(0, 320px);
+    gap: 36px;
+    align-items: center;
+    width: 100%;
+    max-width: 1024px;
+    margin: 0 auto;
+}
+
+.testingCourseContent img {
+    display: block;
+    width: 100%;
+    height: auto;
 }
 
 .testingSubtitle {
@@ -414,6 +504,11 @@
     align-items: center;
 }
 
+.testingOverview {
+    grid-template-columns: minmax(0, 2fr) minmax(220px, 1fr);
+    align-items: start;
+}
+
 .testingSplitRight {
     grid-template-columns: minmax(220px, 31%) 1fr;
 }
@@ -428,7 +523,7 @@
 
 .testingTextColumn>*:not(:last-child),
 .testingWideText>*:not(:last-child) {
-    margin: 0 0 16px 0;
+    margin: 0 0 12px 0;
 }
 
 .testingTextColumnRight {
@@ -462,6 +557,28 @@
 
 .testingFinalBlock {
     grid-template-columns: minmax(220px, 31%) 1fr;
+}
+
+.testingResults {
+    gap: 32px;
+    padding-bottom: 48px;
+}
+
+.testingResultsGrid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 36px;
+}
+
+.testingResultsColumn {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.testingResultsColumn strong,
+.testingResultsColumn span {
+    display: block;
 }
 
 /* PAGE PROJECT - CLOSE BUTTON */
@@ -536,7 +653,40 @@
     }
 
     .testingCase {
+        width: calc(100% - 48px);
         gap: 28px;
+    }
+
+    .testingIntroImages {
+        grid-template-columns: 1fr;
+        width: calc(100% - 48px);
+    }
+
+    .testingStory {
+        width: calc(100% - 48px);
+    }
+
+    .testingStoryRow {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .testingCatalogSection {
+        padding: 48px 24px;
+    }
+
+    .testingCourseSection {
+        padding: 48px 24px;
+    }
+
+    .testingCourseContent {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .testingCatalogPublish {
+        grid-template-columns: 1fr;
+        gap: 20px;
     }
 
     .testingFullImage {
@@ -552,6 +702,14 @@
     .testingSplitRight,
     .testingSplitLeft,
     .testingFinalBlock {
+        grid-template-columns: 1fr;
+    }
+
+    .testingResultsGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .testingOverview {
         grid-template-columns: 1fr;
     }
 

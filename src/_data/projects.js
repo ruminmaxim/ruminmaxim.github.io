@@ -18,7 +18,7 @@ export default {
       id: "testing",
       cover: "projects/testing/cover.png",
       meta: { en: "case", ru: "кейс" },
-      title: { en: "Surveys and&nbsp;testing", ru: "Опросы и&nbsp;тестирования" },
+      title: { en: "Employee Learning Platform", ru: "Система обучения сотрудников" },
       url: { en: "testing-eng.html", ru: "testing-ru.html" }
     },
     {
@@ -68,7 +68,7 @@ export default {
       id: "testing",
       cover: "projects/testing/cover.png",
       meta: { ru: "кейс" },
-      title: { ru: "Опросы и&nbsp;тестирования" },
+      title: { ru: "Система обучения сотрудников" },
       url: { ru: "testing-ru.html" }
     },
     {
