@@ -7,18 +7,18 @@
        Locale pairs are explicit and verified against the page content and project links. #}
     {% set metadataByPage = {
         "index.html": {
-            "description": "Product designer with 12+ years of experience in complex B2B and SaaS products, user flows, design systems, and AI-powered corporate workflows.",
-            "image": "projects/ai-idp/ai-idb.png",
-            "imageAlt": "AI Development Plan setup and generated goals from Maxim Rumin’s product design portfolio",
-            "en": "",
-            "ru": "ru.html"
-        },
-        "ru.html": {
-            "description": "Продуктовый дизайнер с опытом более 12 лет. Проектирую сложные B2B- и SaaS-продукты, пользовательские сценарии и системы, встраиваю AI в корпоративные процессы.",
+            "description": "Создаю продукты целиком — от продуктовой логики до реализации. Работаю со сложными платформами, выстраиваю системы, соединяю дизайн, код и AI.",
             "image": "projects/ai-idp/ai-idb.png",
             "imageAlt": "Настройки AI-плана развития и сгенерированные цели из портфолио Максима Рюмина",
-            "en": "",
-            "ru": "ru.html"
+            "en": "eng.html",
+            "ru": ""
+        },
+        "eng.html": {
+            "description": "I create products end to end, from product logic to implementation. I work on complex platforms and bring together design, code, and AI.",
+            "image": "projects/ai-idp/ai-idb.png",
+            "imageAlt": "AI Development Plan setup and generated goals from Maxim Rumin’s product design portfolio",
+            "en": "eng.html",
+            "ru": ""
         },
         "ai-idb-eng.html": {
             "description": "How I designed an AI scenario that turns skill data or an employee’s own request into an individual development plan based on the 70-20-10 model.",
@@ -203,7 +203,9 @@
             "ru": "vpnwatch-ru.html"
         }
     } -%}
-    {% set metadata = metadataByPage[permalink] -%}
+    {% set metadata = metadataByPage[permalink] or metadataByPage["index.html" if lang == "ru" else "eng.html"] -%}
+    {% set alternateEn = metadata.en -%}
+    {% set alternateRu = metadata.ru -%}
     {% set metadataTitle = title | replace("&nbsp;", " ") -%}
     {% set siteOrigin = "https://ruminmaxim.github.io/" -%}
     {% set canonicalUrl = siteOrigin ~ ("" if permalink == "index.html" else permalink) -%}
@@ -211,9 +213,9 @@
 
     <meta name="description" content="{{ metadata.description }}">
     <link rel="canonical" href="{{ canonicalUrl }}">
-    <link rel="alternate" hreflang="en" href="{{ siteOrigin }}{{ metadata.en }}">
-    <link rel="alternate" hreflang="ru" href="{{ siteOrigin }}{{ metadata.ru }}">
-    <link rel="alternate" hreflang="x-default" href="{{ siteOrigin }}{{ metadata.en }}">
+    <link rel="alternate" hreflang="en" href="{{ siteOrigin }}{{ alternateEn }}">
+    <link rel="alternate" hreflang="ru" href="{{ siteOrigin }}{{ alternateRu }}">
+    <link rel="alternate" hreflang="x-default" href="{{ siteOrigin }}{{ alternateRu }}">
 
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Maxim Rumin — Product Designer">
@@ -235,10 +237,11 @@
     <link rel="stylesheet" href="assets/css/responsive.css">
     {% if pageType == "home" %}<link rel="stylesheet" href="assets/css/mobile-menu.css">{% endif %}
     <link rel="stylesheet" href="assets/css/icons.css">
+    {% if pageType == "homeNew" %}<link rel="stylesheet" href="assets/css/home-new.css">{% endif %}
 </head>
 <body class="{{ bodyClass }}"{% if bodyId %} id="{{ bodyId }}"{% endif %}>
     {{ content | safe }}
-    {% if pageType == "home" %}
+    {% if pageType == "home" or pageType == "homeNew" %}
     <script src="https://unpkg.com/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
     <script src="https://unpkg.com/tippy.js@6.3.7/dist/tippy-bundle.umd.min.js"></script>
     {% endif %}

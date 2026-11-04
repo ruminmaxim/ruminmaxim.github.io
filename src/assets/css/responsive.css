@@ -129,8 +129,8 @@
     .portfolioCaseContainer{
         padding: 24px 16px;
     }
-    .closeButton {
-        top: 10px !important;
+    .backLink {
+        top: 10px;
     }
 
     /* PAGE PROJECT - CONTENT SECTIONS - SECTION TEXT+IMAGE */

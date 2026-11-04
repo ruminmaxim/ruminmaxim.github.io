@@ -1,0 +1,70 @@
+{
+  "ru": [
+    {
+      "content": "Проектирую сложные продукты с&nbsp;большим количеством ролей, сценариев, данных и&nbsp;бизнес-правил. Помогаю превращать внутреннюю сложность системы в&nbsp;понятные и&nbsp;последовательные пользовательские процессы.",
+      "label": "B2B- и&nbsp;SaaS-системы"
+    },
+    {
+      "content": "Работаю с&nbsp;продуктом от&nbsp;постановки задачи и&nbsp;исследования контекста до&nbsp;готового решения и&nbsp;его развития после запуска. Учитываю одновременно потребности пользователей, цели бизнеса и&nbsp;ограничения продукта.",
+      "label": "Продуктовый дизайн"
+    },
+    {
+      "content": "Объединяю данные, пользовательские сценарии и&nbsp;CJM, чтобы решать реальные задачи бизнеса и&nbsp;пользователей. Собираю требования, провожу интервью со&nbsp;стейкхолдерами и&nbsp;формирую UX-решения на&nbsp;основе полученных инсайтов.",
+      "label": "UX-стратегия и&nbsp;сценарии"
+    },
+    {
+      "content": "Проектирую интерфейсы для&nbsp;сложных сценариев, уделяя внимание структуре, иерархии информации и&nbsp;деталям взаимодействия. Стремлюсь делать продукт понятным без&nbsp;упрощения его возможностей.",
+      "label": "Дизайн интерфейсов"
+    },
+    {
+      "content": "Проектирую сценарии с&nbsp;использованием AI/ML и&nbsp;генеративных технологий — от&nbsp;пользовательских функций до&nbsp;внутренних корпоративных процессов. Работаю с&nbsp;неопределённостью, качеством результата и&nbsp;контролем взаимодействия человека с&nbsp;AI.",
+      "label": "AI/ML-продукты"
+    },
+    {
+      "content": "Создаю и&nbsp;развиваю дизайн-системы, которые помогают сохранять целостность продукта и&nbsp;ускоряют работу команд. Прорабатываю компоненты, паттерны, состояния и&nbsp;правила их использования в&nbsp;реальных продуктовых сценариях.",
+      "label": "Дизайн-системы"
+    },
+    {
+      "content": "Использую прототипирование и&nbsp;знание frontend-технологий, чтобы быстро проверять идеи и&nbsp;точнее передавать логику взаимодействия. Понимаю возможности и&nbsp;ограничения реализации и&nbsp;говорю с&nbsp;разработкой на&nbsp;одном языке.",
+      "label": "Frontend и&nbsp;прототипы"
+    },
+    {
+      "content": "Использую качественные и&nbsp;количественные данные для&nbsp;проверки продуктовых решений. Провожу интервью, тестирую прототипы, анализирую обратную связь и&nbsp;уточняю решение до&nbsp;и&nbsp;после запуска.",
+      "label": "UX-исследования"
+    }
+  ],
+  "en": [
+    {
+      "content": "I design complex products with many roles, scenarios, data entities, and business rules. My focus is turning the system&rsquo;s internal complexity into clear and consistent user workflows.",
+      "label": "B2B and SaaS systems"
+    },
+    {
+      "content": "I work with products from problem framing and context research to a shipped solution and its evolution after launch. I balance user needs, business goals, and product constraints.",
+      "label": "Product design"
+    },
+    {
+      "content": "I combine data, user scenarios, and CJMs to solve real business and user problems. I gather requirements, interview stakeholders, and turn insights into UX decisions.",
+      "label": "UX strategy and flows"
+    },
+    {
+      "content": "I design interfaces for complex scenarios with attention to structure, information hierarchy, and interaction details. I try to make the product understandable without simplifying what it can do.",
+      "label": "Interface design"
+    },
+    {
+      "content": "I design scenarios that use AI/ML and generative technologies, from user-facing features to internal corporate processes. I work with uncertainty, output quality, and human control over AI interaction.",
+      "label": "AI/ML products"
+    },
+    {
+      "content": "I create and evolve design systems that preserve product consistency and help teams move faster. I work through components, patterns, states, and usage rules in real product scenarios.",
+      "label": "Design systems"
+    },
+    {
+      "content": "I use prototyping and front-end knowledge to validate ideas faster and communicate interaction logic more precisely. I understand implementation constraints and speak the same language as development teams.",
+      "label": "Front-end and prototypes"
+    },
+    {
+      "content": "I use qualitative and quantitative data to validate product decisions. I run interviews, test prototypes, analyze feedback, and refine solutions before and after launch.",
+      "label": "UX research"
+    }
+  ]
+}

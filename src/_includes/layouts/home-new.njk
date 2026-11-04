@@ -1,0 +1,13 @@
+---
+layout: layouts/base.njk
+pageType: homeNew
+bodyClass: bodyIndex bodyIndexNew
+bodyId: aboutme
+---
+<main class="newHomeMain">
+    {{ content | safe }}
+    <div class="newHomeFooter">
+        {% set copy = site.locales[lang] %}
+        {% include "components/footer.njk" %}
+    </div>
+</main>

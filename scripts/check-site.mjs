@@ -7,7 +7,7 @@ const errors = [];
 
 for (const filename of htmlFiles) {
   const html = await readFile(path.join(outputDir, filename), "utf8");
-  const expectedLang = filename === "ru.html" || filename.endsWith("-ru.html") ? "ru" : "en";
+  const expectedLang = filename === "index.html" || filename === "ru.html" || filename === "ru-new.html" || filename.endsWith("-ru.html") ? "ru" : "en";
 
   if (/mc\.yandex\.ru|ym\(90798039/.test(html)) {
     errors.push(`${filename}: contains Yandex Metrika`);
@@ -15,6 +15,38 @@ for (const filename of htmlFiles) {
 
   if (!html.includes(`<html lang="${expectedLang}">`)) {
     errors.push(`${filename}: expected lang=${expectedLang}`);
+  }
+
+  if (filename.endsWith("-ru.html") || filename.endsWith("-eng.html")) {
+    const home = expectedLang === "ru" ? "index.html" : "eng.html";
+    if (!html.includes(`href="${home}" class="backLink" data-return-home`)) {
+      errors.push(`${filename}: close button must return to ${home}`);
+    }
+    const alternate = filename.replace(/-(?:ru|eng)\.html$/, expectedLang === "ru" ? "-eng.html" : "-ru.html");
+    const alternateLocale = expectedLang === "ru" ? "en" : "ru";
+    if (!html.includes(`hreflang="${alternateLocale}" href="https://ruminmaxim.github.io/${alternate}"`)) {
+      errors.push(`${filename}: missing alternate ${alternate}`);
+    }
+  }
+
+  if (filename === "index.html" || filename === "eng.html") {
+    const caseLinks = [...html.matchAll(/class="newPortfolioCard" href="([^"]+)"/g)];
+    if (caseLinks.length !== 6 || caseLinks.some(([, href]) => !href.endsWith(`-${expectedLang === "ru" ? "ru" : "eng"}.html`))) {
+      errors.push(`${filename}: expected six portfolio links in the matching language`);
+    }
+    if (!html.includes('href="eng.html" aria-current="page"') && filename === "eng.html") {
+      errors.push(`${filename}: English language switch is not current`);
+    }
+    if (!html.includes('href="eng.html"') || !html.includes('href="index.html"')) {
+      errors.push(`${filename}: missing language switch`);
+    }
+  }
+
+  if (["ru.html", "ru-new.html", "en-new.html", "ing.html"].includes(filename)) {
+    const target = expectedLang === "ru" ? "index.html" : "eng.html";
+    if (!html.includes(`content="0;url=${target}"`)) {
+      errors.push(`${filename}: expected redirect to ${target}`);
+    }
   }
 
   for (const match of html.matchAll(/(?:href|src)="([^"]+)"/g)) {
@@ -31,8 +63,8 @@ for (const filename of htmlFiles) {
   }
 }
 
-if (htmlFiles.length !== 28) {
-  errors.push(`expected 28 HTML files, found ${htmlFiles.length}`);
+if (htmlFiles.length !== 32) {
+  errors.push(`expected 32 HTML files, found ${htmlFiles.length}`);
 }
 
 if (errors.length) {

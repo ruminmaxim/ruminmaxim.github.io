@@ -1,0 +1,33 @@
+<section class="newHero" aria-labelledby="newHeroTitle">
+    <div class="newHeroContent">
+        <div class="newHeroMainContent">
+            <nav class="newHeroLanguages" aria-label="{{ 'Язык' if lang == 'ru' else 'Language' }}">
+                <a href="eng.html"{% if lang == 'en' %} aria-current="page"{% endif %}>en</a>
+                <a href="index.html"{% if lang == 'ru' %} aria-current="page"{% endif %}>ru</a>
+            </nav>
+            <div class="newHeroHeading">
+                <h1 id="newHeroTitle">{{ 'Рюмин Максим' if lang == 'ru' else 'Rumin Maxim' }}</h1>
+                <div class="newHeroBadge">
+                    <span>{{ 'старший продуктовый дизайнер' if lang == 'ru' else 'senior product designer' }}</span>
+                    <span class="newHeroBadgeDot" aria-hidden="true"></span>
+                    <span>{{ '12+ лет опыта' if lang == 'ru' else '12+ years of experience' }}</span>
+                </div>
+            </div>
+            <div class="newHeroDescriptionGroup">
+                <p>{{ 'Создаю продукты целиком — от продуктовой логики до реализации. Работаю со сложными платформами, выстраиваю системы, проектирую пользовательские сценарии и интерфейсы. Соединяю дизайн, код и AI, превращая идеи в работающие решения.' if lang == 'ru' else 'I create products end to end, from product logic to implementation. I work on complex platforms, build systems, and design user flows and interfaces. I bring together design, code, and AI to turn ideas into working solutions.' }}</p>
+                <div class="newHeroTags" role="group" aria-label="{{ 'Специализация' if lang == 'ru' else 'Specialties' }}">
+                    {% for skill in heroSkills[lang] %}
+                        <button class="newHeroTag" type="button" data-tippy-content="{{ skill.content | safe }}">{{ skill.label | safe }}</button>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+        <div class="newHeroContacts" role="group" aria-label="{{ 'Контакты' if lang == 'ru' else 'Contacts' }}">
+            <a href="{{ site.linkedin }}" target="_blank" rel="noopener noreferrer"><img src="linkedin.svg" alt="" aria-hidden="true"><span>LinkedIn</span></a>
+            <a href="mailto:{{ site.email }}"><img src="email.svg" alt="" aria-hidden="true"><span>E-mail</span></a>
+            <a href="{{ site.telegram }}" target="_blank" rel="noopener noreferrer"><img src="telegram.svg" alt="" aria-hidden="true"><span>Telegram</span></a>
+            <a class="newHeroCv" href="{{ site.locales[lang].cv }}" download><img src="cv.svg" alt="" aria-hidden="true"><span>cv.pdf</span></a>
+        </div>
+    </div>
+    <img class="newHeroArtwork" src="hero-artwork.svg" width="512" height="572" alt="" aria-hidden="true">
+</section>

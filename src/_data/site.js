@@ -16,7 +16,8 @@ export default {
       download: "CV.pdf",
       cv: "Rumin_Maxim_CV.pdf",
       languageLabel: "ru version",
-      languageUrl: "ru.html"
+      languageUrl: "index.html",
+      homeUrl: "eng.html"
     },
     ru: {
       portfolio: "Портфолио Рюмина Максима",
@@ -31,7 +32,8 @@ export default {
       download: "CV.pdf",
       cv: "Рюмин_Максим_Резюме.pdf",
       languageLabel: "eng version",
-      languageUrl: "index.html"
+      languageUrl: "eng.html",
+      homeUrl: "index.html"
     }
   }
 };

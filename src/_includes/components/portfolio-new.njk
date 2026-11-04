@@ -1,0 +1,16 @@
+<section class="newPortfolio" id="portfolio" aria-label="{{ 'Портфолио' if lang == 'ru' else 'Portfolio' }}">
+    <div class="newPortfolioGrid">
+        {% for project in portfolioNew %}
+            <a class="newPortfolioCard" href="{{ project.url[lang] }}">
+                <div class="newPortfolioImage"><img src="{{ project.image }}" alt="" width="1184" height="360" loading="lazy"></div>
+                <div class="newPortfolioCardBody">
+                    <h2>{{ project.title[lang] }}</h2>
+                    <div class="newPortfolioTags" role="group" aria-label="{{ 'Теги проекта' if lang == 'ru' else 'Project tags' }}">
+                        {% for tag in project.tags %}<span>{{ tag }}</span>{% endfor %}
+                    </div>
+                </div>
+            </a>
+        {% endfor %}
+    </div>
+    <a class="newPortfolioBehance" href="https://www.behance.net/ruminmaxim" target="_blank" rel="noopener noreferrer">Old projects on Behance</a>
+</section>
