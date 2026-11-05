@@ -1,5 +1,6 @@
 import { access, readFile, readdir } from "node:fs/promises";
 import path from "node:path";
+import { transformRussianHtml } from "../src/lib/russian-typography.js";
 
 const outputDir = path.resolve("_site");
 const htmlFiles = (await readdir(outputDir)).filter((file) => file.endsWith(".html"));
@@ -15,6 +16,10 @@ for (const filename of htmlFiles) {
 
   if (!html.includes(`<html lang="${expectedLang}">`)) {
     errors.push(`${filename}: expected lang=${expectedLang}`);
+  }
+
+  if (expectedLang === "ru" && transformRussianHtml(html) !== html) {
+    errors.push(`${filename}: contains a hanging Russian short word`);
   }
 
   if (filename.endsWith("-ru.html") || filename.endsWith("-eng.html")) {
